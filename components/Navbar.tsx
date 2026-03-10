@@ -134,7 +134,7 @@ export default function Navbar() {
                   border: 'none',
                   cursor: 'pointer',
                   padding: '0.25rem 0',
-                  color: isActive ? '#2a2b26' : 'rgba(255,255,255,0.75)',
+                  color: isActive ? '#535353' : 'rgba(255,255,255,0.75)',
                   fontWeight: isActive ? 700 : 500,
                   fontSize: 'clamp(0.65rem, 0.9vw, 0.78rem)',
                   letterSpacing: '0.1em',
@@ -183,8 +183,8 @@ export default function Navbar() {
           gap: '0.4rem',
           padding: '0.45rem 1rem',
           borderRadius: '999px',
-          border: '1px solid rgba(0,188,212,0.5)',
-          color: '#26C6DA',
+          border: '1px solid rgba(255, 255, 255, 0.5)',
+          color: '#e8edee',
           fontWeight: 700,
           fontSize: 'clamp(0.58rem, 0.8vw, 0.7rem)',
           letterSpacing: '0.12em',
@@ -198,19 +198,19 @@ export default function Navbar() {
           (e.currentTarget as HTMLAnchorElement).style.background =
             'rgba(0,188,212,0.12)';
           (e.currentTarget as HTMLAnchorElement).style.borderColor =
-            'rgba(0,188,212,0.9)';
+            'rgba(255, 255, 255, 0.9)';
         }}
         onMouseLeave={(e) => {
           (e.currentTarget as HTMLAnchorElement).style.background = 'transparent';
           (e.currentTarget as HTMLAnchorElement).style.borderColor =
-            'rgba(0,188,212,0.5)';
+            'rgba(255, 255, 255, 0.5)';
         }}
         className="nav-download"
       >
         <svg viewBox="0 0 16 16" fill="none" style={{ width: '0.75rem', height: '0.75rem' }}>
           <path
             d="M8 2v8M8 10l-3-3M8 10l3-3M3 13h10"
-            stroke="#26C6DA"
+            stroke="#fcfcfc"
             strokeWidth="1.8"
             strokeLinecap="round"
             strokeLinejoin="round"

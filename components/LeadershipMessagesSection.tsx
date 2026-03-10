@@ -4,24 +4,24 @@ import { useRef, useState, useEffect } from 'react';
 
 const leaders = [
   {
-    role: "Chairman's Review",
+    role: "Chairman's Message",
     name: 'R. Renganathan',
     title: 'Chairman',
     image: '/images/Chairman.jpg',
     quote: 'We strengthened our market leadership for the 22nd consecutive year, advancing digital transformation to improve customer experience.',
     message: 'This year marked continued stability and strong performance for Ceylinco Life, supported by disciplined execution, prudent financial management and an unwavering commitment to our policyholders. As Sri Lanka\'s economic environment stabilised, we maintained resilient growth, strong capital adequacy and a solid balance sheet. Looking ahead, we remain committed to delivering long-term value to our stakeholders, preparing for evolving regulatory standards including SLFRS 17 and the new RBC regime.',
-    accent: '#0b0335',
-    imageLeft: true,
+    accent: '#1a4a8a',
+    imageLeft: false,
   },
   {
-    role: "Managing Director / Chief Executive Officer's Review",
+    role: "CEO / MD Message",
     name: 'E T L Ranasinghe',
-    title: 'MD / CEO',
+    title: 'CEO / MD',
     image: '/images/CEO.jpg',
     quote: 'Our focus remains on strengthening productivity, accelerating digital enablement and deepening customer relationships.',
     message: '2025 was a year of steady progress as we strengthened operations, enhanced service quality and advanced our digital transformation agenda. Our distribution network remained a key strength, with renewed momentum across the agency force and growth in the Virtual Financial Advisor channel. We invested in our people through upgraded learning platforms and leadership development, ensuring our teams remain equipped and future‑ready.',
-    accent: '#0e2a04',
-    imageLeft: false,
+    accent: '#0a3d1f',
+    imageLeft: true,
   },
 ];
 
