@@ -1,7 +1,7 @@
 'use client';
 
 import { useScrollAnimation, slideLeft, slideRight, fadeUp, fadeIn } from '@/hooks/useScrollAnimation';
-// Immage 
+
 export default function AboutLegacySection() {
   const aboutAnim = useScrollAnimation({ threshold: 0.15 });
   const legacyAnim = useScrollAnimation({ threshold: 0.15 });
