@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cmd /c \"copy e:\\\\RND\\\\ceylife-annual-report-2025\\\\logo.png e:\\\\RND\\\\ceylife-annual-report-2025\\\\public\\\\images\\\\logo.png && echo SUCCESS\")",
+      "Bash(cmd /c \"if exist e:\\\\RND\\\\ceylife-annual-report-2025\\\\public\\\\images\\\\logo.png \\(echo EXISTS\\) else \\(echo NOT FOUND\\)\")",
+      "Bash(node -e \"require\\(''fs''\\).copyFileSync\\(''e:/RND/ceylife-annual-report-2025/logo.png'', ''e:/RND/ceylife-annual-report-2025/public/images/logo.png''\\); console.log\\(''done''\\)\")",
+      "WebFetch(domain:www.ceylincolife.com)",
+      "Bash(npm install openai react-markdown@8)"
+    ]
+  }
+}
