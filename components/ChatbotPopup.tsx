@@ -231,7 +231,8 @@ export default function ChatbotPopup({ onClose }: { onClose: () => void }) {
   const audioRef       = useRef<HTMLAudioElement | null>(null);
   const speakLockRef   = useRef(false);
   const speakingMsgRef = useRef<number | null>(null);
-  const recognitionRef = useRef<SpeechRecognition | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const recognitionRef = useRef<any>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef    = useRef<HTMLTextAreaElement>(null);
   const nextId         = useRef(10);
@@ -313,12 +314,14 @@ export default function ChatbotPopup({ onClose }: { onClose: () => void }) {
   const toggleListening = () => {
     setMicError('');
     if (isListening) { stopListening(); return; }
-    const SR = window.SpeechRecognition || (window as { webkitSpeechRecognition?: typeof window.SpeechRecognition }).webkitSpeechRecognition;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     if (!SR) { setMicError('Voice input not supported. Use Chrome, Edge, or Safari.'); return; }
     stopAudio();
     const rec = new SR();
     rec.continuous = true; rec.interimResults = true; rec.lang = 'en-US';
-    rec.onresult = (e: SpeechRecognitionEvent) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    rec.onresult = (e: any) => {
       let interim = '', final = '';
       for (let i = e.resultIndex; i < e.results.length; i++) {
         const t = e.results[i][0].transcript;
@@ -327,7 +330,8 @@ export default function ChatbotPopup({ onClose }: { onClose: () => void }) {
       interimTextRef.current = interim; setInterimText(interim);
       if (final.trim()) setInputText(prev => correctVoice((prev + ' ' + final).trim()));
     };
-    rec.onerror = (e: SpeechRecognitionErrorEvent) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    rec.onerror = (e: any) => {
       if (e.error === 'not-allowed') setMicError('Microphone access denied.');
       else if (e.error !== 'no-speech') setMicError(`Voice error: ${e.error}`);
       setIsListening(false);
