@@ -66,7 +66,7 @@ function _stopAudio() {
 
 /* ─── OpenAI Assistants ──────────────────────────────────────── */
 async function getBotReply(text: string, threadId: string | null) {
-  const apiKey = "process.env.NEXT_PUBLIC_OPENAI_API_KEY";
+  const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
   const client = new OpenAI({ apiKey, dangerouslyAllowBrowser: true });
   let tid = threadId;
   if (!tid) { const thread = await client.beta.threads.create(); tid = thread.id; }
