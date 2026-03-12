@@ -277,6 +277,7 @@ export default function ChatbotPopup({ onClose }: { onClose: () => void }) {
   const [isTyping, setIsTyping]       = useState(false);
   const [micError, setMicError]       = useState('');
   const [ttsError, setTtsError]       = useState('');
+  const [voiceConsent, setVoiceConsent] = useState<boolean | null>(null);
 
   const threadIdRef      = useRef<string | null>(null);
   const speakingMsgRef   = useRef<number | null>(null);
@@ -331,11 +332,12 @@ export default function ChatbotPopup({ onClose }: { onClose: () => void }) {
   }, [stopAudio]);
 
   useEffect(() => {
+    if (voiceConsent === null || !voiceConsent) return;
     if (welcomeSpokenRef.current) return;
     welcomeSpokenRef.current = true;
-    const t = setTimeout(() => speakMessage({ ...WELCOME_MSG, time: fmt() }), 900);
+    const t = setTimeout(() => speakMessage({ ...WELCOME_MSG, time: fmt() }), 600);
     return () => clearTimeout(t);
-  }, [speakMessage]);
+  }, [speakMessage, voiceConsent]);
 
   const dispatch = useCallback(async (text: string, isVoice = false) => {
     const clean = isVoice ? correctVoice(text.trim()) : text.trim();
@@ -514,6 +516,53 @@ export default function ChatbotPopup({ onClose }: { onClose: () => void }) {
           {/* Watercolor accents */}
           <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', zIndex:0, background:'radial-gradient(ellipse 60% 40% at 80% 0%, rgba(38,198,218,0.1) 0%, transparent 60%)' }} />
           <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', zIndex:0, background:'radial-gradient(ellipse 50% 50% at 10% 90%, rgba(102,187,106,0.07) 0%, transparent 60%)' }} />
+
+          {/* ── Voice consent overlay ──────────────────────────────── */}
+          {voiceConsent === null && (
+            <div style={{ position:'absolute', inset:0, zIndex:20, display:'flex', alignItems:'center', justifyContent:'center', background:'rgba(4,10,22,0.88)', backdropFilter:'blur(12px)', WebkitBackdropFilter:'blur(12px)', animation:'chatFadeUp 0.3s ease both' }}>
+              <div style={{ textAlign:'center', padding:'2rem 2.2rem', maxWidth:'340px' }}>
+                {/* Orb */}
+                <div style={{ display:'flex', justifyContent:'center', marginBottom:'1.4rem' }}>
+                  <div style={{ width:64, height:64, borderRadius:'50%', overflow:'hidden', boxShadow:'0 0 0 2px rgba(38,198,218,0.3), 0 0 32px rgba(38,198,218,0.3)', position:'relative' }}>
+                    <div style={{ position:'absolute', inset:0, background:'#0a0f1e' }} />
+                    <div style={{ position:'absolute', width:'150%', height:'130%', top:'-15%', left:'-15%', background:'conic-gradient(from 0deg at 38% 42%, #26C6DA 0deg, transparent 110deg, #66BB6A 200deg, transparent 310deg)', animation:'siriH1 4s linear infinite', opacity:0.9, filter:'blur(3px)' }} />
+                    <div style={{ position:'absolute', inset:0, display:'flex', alignItems:'center', justifyContent:'center' }}>
+                      <svg width="22" height="22" viewBox="0 0 32 32" style={{ opacity:0.9 }}>
+                        <polygon points="16,3 17.5,13 16,15 14.5,13" fill="#F5A623"/>
+                        <polygon points="16,29 17.5,19 16,17 14.5,19" fill="rgba(200,220,255,0.8)"/>
+                        <polygon points="29,16 19,14.5 17,16 19,17.5" fill="rgba(200,220,255,0.6)"/>
+                        <polygon points="3,16  13,14.5 15,16 13,17.5" fill="rgba(200,220,255,0.6)"/>
+                        <circle cx="16" cy="16" r="2.8" fill="rgba(10,15,30,0.85)" stroke="rgba(255,255,255,0.3)" strokeWidth="0.5"/>
+                        <circle cx="16" cy="16" r="1.4" fill="#26C6DA"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <p style={{ margin:'0 0 0.4rem', fontSize:'1rem', fontWeight:700, color:'#fff' }}>Enable Voice Assistant?</p>
+                <p style={{ margin:'0 0 1.8rem', fontSize:'0.78rem', color:'rgba(255,255,255,0.45)', lineHeight:1.6 }}>
+                  Ceylena can read responses aloud.<br/>Would you like to enable voice?
+                </p>
+                <div style={{ display:'flex', gap:'0.75rem', justifyContent:'center' }}>
+                  <button
+                    onClick={() => setVoiceConsent(false)}
+                    style={{ flex:1, padding:'0.6rem 0', borderRadius:'24px', border:'1px solid rgba(255,255,255,0.15)', background:'rgba(255,255,255,0.06)', color:'rgba(255,255,255,0.6)', fontSize:'0.82rem', fontWeight:600, cursor:'pointer', transition:'all .2s' }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background='rgba(255,255,255,0.12)'; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background='rgba(255,255,255,0.06)'; }}
+                  >
+                    No, text only
+                  </button>
+                  <button
+                    onClick={() => setVoiceConsent(true)}
+                    style={{ flex:1, padding:'0.6rem 0', borderRadius:'24px', border:'none', background:'linear-gradient(135deg,#26C6DA,#0097A7)', color:'#fff', fontSize:'0.82rem', fontWeight:700, cursor:'pointer', boxShadow:'0 4px 18px rgba(38,198,218,0.35)', transition:'all .2s' }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.filter='brightness(1.1)'; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.filter=''; }}
+                  >
+                    Yes, enable voice
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Header */}
           <div style={{ position:'relative', zIndex:1, padding:'0.85rem 1.1rem', borderBottom:'1px solid rgba(38,198,218,0.12)', display:'flex', alignItems:'center', gap:'0.75rem', flexShrink:0, background:'rgba(6,13,28,0.7)', backdropFilter:'blur(10px)', WebkitBackdropFilter:'blur(10px)' }}>

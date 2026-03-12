@@ -169,6 +169,7 @@ function LeaderPanel({ leader, idx }: { leader: typeof leaders[0]; idx: number }
 
       {/* Accent bottom line */}
       <div
+        className="leader-panel-accent"
         style={{
           position: 'absolute',
           bottom: 0,
@@ -233,22 +234,76 @@ export default function LeadershipMessagesSection() {
       <div style={{ height: '3rem' }} />
 
       <style>{`
-        /* ── Medium screens: 641px – 900px ───────────────────────── */
-        @media (min-width: 641px) and (max-width: 900px) {
-          .leader-panel { height: clamp(360px, 55vw, 460px) !important; }
-          .leader-panel img { width: 48% !important; }
-          .leader-panel-text { padding: 1.5rem 2rem !important; }
-          .leader-panel-text > div { width: clamp(200px, 50%, 420px) !important; }
+        /* ── Medium screens: 641px – 1024px ─────────────────────── */
+        @media (min-width: 641px) and (max-width: 1024px) {
+          .leader-panel { height: clamp(340px, 52vw, 480px) !important; }
+          .leader-panel img { width: 50% !important; }
+          .leader-panel-text { padding: 1.5rem 1.75rem !important; }
+          .leader-panel-text > div { width: clamp(220px, 48%, 400px) !important; }
         }
 
-        /* ── Small screens: ≤ 640px ──────────────────────────────── */
+        /* ── Small screens: ≤ 640px — stacked layout ────────────── */
         @media (max-width: 640px) {
-          .leader-panel { height: auto !important; min-height: 560px; }
-          .leader-panel img { width: 100% !important; height: 280px !important; top: 0 !important; left: 0 !important; right: 0 !important; }
-          .leader-panel-gradient-a { background: linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(4,8,20,0.97) 72%, #040814 100%) !important; }
+          /* Panel becomes a flex column so image + text stack */
+          .leader-panel {
+            height: auto !important;
+            display: flex !important;
+            flex-direction: column !important;
+            overflow: visible !important;
+          }
+
+          /* Image flows in document */
+          .leader-panel img {
+            position: relative !important;
+            top: auto !important; left: auto !important; right: auto !important;
+            width: 100% !important;
+            height: 300px !important;
+            object-fit: cover !important;
+            object-position: top center !important;
+            flex-shrink: 0;
+          }
+
+          /* Gradient fades image bottom to dark */
+          .leader-panel-gradient-a {
+            position: absolute !important;
+            top: 0 !important; left: 0 !important; right: 0 !important;
+            height: 300px !important;
+            bottom: auto !important;
+            background: linear-gradient(to bottom, transparent 45%, #040814 100%) !important;
+          }
           .leader-panel-gradient-b { display: none !important; }
-          .leader-panel-text { justify-content: flex-start !important; align-items: flex-end !important; padding: 1.25rem !important; padding-top: 260px !important; }
-          .leader-panel-text > div { width: 100% !important; transform: none !important; opacity: 1 !important; }
+
+          /* Text panel flows below image */
+          .leader-panel-text {
+            position: relative !important;
+            inset: auto !important;
+            flex: 1 !important;
+            display: flex !important;
+            align-items: flex-start !important;
+            justify-content: flex-start !important;
+            padding: 1.25rem 1.1rem 2rem !important;
+            background: #040814;
+          }
+
+          /* Text content fills full width, no slide animations */
+          .leader-panel-text > div {
+            width: 100% !important;
+            transform: none !important;
+            opacity: 1 !important;
+          }
+
+          /* Accent line: full width at bottom of text area */
+          .leader-panel-accent {
+            position: relative !important;
+            width: 100% !important;
+            left: auto !important; right: auto !important;
+          }
+        }
+
+        /* ── Extra small: ≤ 390px (iPhone SE, 12 mini) ──────────── */
+        @media (max-width: 390px) {
+          .leader-panel img { height: 260px !important; }
+          .leader-panel-gradient-a { height: 260px !important; }
         }
       `}</style>
     </section>
