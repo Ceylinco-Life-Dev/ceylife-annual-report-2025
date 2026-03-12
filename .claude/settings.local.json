@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \":*)",
+      "Bash(identify /e/RND/ceylife-annual-report-2025/public/images/AIChatbot.png)"
+    ]
+  }
+}

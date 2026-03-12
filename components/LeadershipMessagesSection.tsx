@@ -233,13 +233,22 @@ export default function LeadershipMessagesSection() {
       <div style={{ height: '3rem' }} />
 
       <style>{`
+        /* ── Medium screens: 641px – 900px ───────────────────────── */
+        @media (min-width: 641px) and (max-width: 900px) {
+          .leader-panel { height: clamp(360px, 55vw, 460px) !important; }
+          .leader-panel img { width: 48% !important; }
+          .leader-panel-text { padding: 1.5rem 2rem !important; }
+          .leader-panel-text > div { width: clamp(200px, 50%, 420px) !important; }
+        }
+
+        /* ── Small screens: ≤ 640px ──────────────────────────────── */
         @media (max-width: 640px) {
-          .leader-panel { height: auto !important; min-height: 480px; }
-          .leader-panel img { width: 100% !important; height: 260px !important; top: 0 !important; left: 0 !important; right: 0 !important; }
-          .leader-panel-gradient-a { background: linear-gradient(to bottom, transparent 0%, transparent 45%, rgba(4,8,20,0.9) 65%, #040814 100%) !important; }
+          .leader-panel { height: auto !important; min-height: 560px; }
+          .leader-panel img { width: 100% !important; height: 280px !important; top: 0 !important; left: 0 !important; right: 0 !important; }
+          .leader-panel-gradient-a { background: linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(4,8,20,0.97) 72%, #040814 100%) !important; }
           .leader-panel-gradient-b { display: none !important; }
-          .leader-panel-text { justify-content: flex-start !important; align-items: flex-end !important; padding-top: 200px !important; padding-bottom: 2rem !important; }
-          .leader-panel-text > div { width: 100% !important; transform: none !important; }
+          .leader-panel-text { justify-content: flex-start !important; align-items: flex-end !important; padding: 1.25rem !important; padding-top: 260px !important; }
+          .leader-panel-text > div { width: 100% !important; transform: none !important; opacity: 1 !important; }
         }
       `}</style>
     </section>
