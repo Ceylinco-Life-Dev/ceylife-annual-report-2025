@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(python3 -c \":*)",
-      "Bash(identify /e/RND/ceylife-annual-report-2025/public/images/AIChatbot.png)"
+      "Bash(identify /e/RND/ceylife-annual-report-2025/public/images/AIChatbot.png)",
+      "Bash(\"e:/RND/ceylife-annual-report-2025/.env.local\")"
     ]
   }
 }
