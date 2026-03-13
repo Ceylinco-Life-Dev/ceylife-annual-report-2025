@@ -10,7 +10,7 @@ const leaders = [
     image: '/images/Chairman.jpg',
     quote: 'We strengthened our market leadership for the 22nd consecutive year, advancing digital transformation to improve customer experience.',
     message: 'This year marked continued stability and strong performance for Ceylinco Life, supported by disciplined execution, prudent financial management and an unwavering commitment to our policyholders. As Sri Lanka\'s economic environment stabilised, we maintained resilient growth, strong capital adequacy and a solid balance sheet. Looking ahead, we remain committed to delivering long-term value to our stakeholders, preparing for evolving regulatory standards including SLFRS 17 and the new RBC regime.',
-    accent: '#1a4a8a',
+    accent: '#1a6aaa',
     imageLeft: false,
   },
   {
@@ -20,7 +20,7 @@ const leaders = [
     image: '/images/CEO.jpg',
     quote: 'Our focus remains on strengthening productivity, accelerating digital enablement and deepening customer relationships.',
     message: '2025 was a year of steady progress as we strengthened operations, enhanced service quality and advanced our digital transformation agenda. Our distribution network remained a key strength, with renewed momentum across the agency force and growth in the Virtual Financial Advisor channel. We invested in our people through upgraded learning platforms and leadership development, ensuring our teams remain equipped and future‑ready.',
-    accent: '#0a3d1f',
+    accent: '#0a7a3f',
     imageLeft: true,
   },
 ];
@@ -45,8 +45,8 @@ function LeaderPanel({ leader, idx }: { leader: typeof leaders[0]; idx: number }
   const { ref, visible } = useInView(0.1);
 
   const gradientDir = leader.imageLeft
-    ? 'to right, transparent 0%, transparent 35%, rgba(230, 124, 32, 0.82) 58%, rgba(217, 206, 51, 0.98) 78%, #22c55e 100%'
-    : 'to left,  transparent 0%, transparent 35%, rgba(188, 166, 66, 0.82) 58%, rgba(152, 130, 30, 0.98) 78%, #c3a626 100%';
+    ? 'to right, transparent 0%, transparent 30%, rgba(184,240,210,0.85) 55%, rgba(184,240,210,0.98) 100%'
+    : 'to left, transparent 0%, transparent 30%, rgba(184,230,242,0.85) 55%, rgba(184,230,242,0.98) 100%';
 
   return (
     <div
@@ -97,8 +97,8 @@ function LeaderPanel({ leader, idx }: { leader: typeof leaders[0]; idx: number }
           position: 'absolute',
           inset: 0,
           background: leader.imageLeft
-            ? 'linear-gradient(to left, #4661b0 45%, transparent 65%)'
-            : 'linear-gradient(to right, #146880 45%, transparent 65%)',
+            ? 'linear-gradient(to left, rgba(184,240,210,0.95) 45%, transparent 65%)'
+            : 'linear-gradient(to right, rgba(184,230,242,0.95) 45%, transparent 65%)',
           pointerEvents: 'none',
         }}
       />
@@ -131,7 +131,7 @@ function LeaderPanel({ leader, idx }: { leader: typeof leaders[0]; idx: number }
               margin: '0 0 0.9rem',
               fontSize: 'clamp(1.1rem, 2vw, 1.65rem)',
               fontWeight: 900,
-              color: '#fff',
+              color: '#0d1f35',
               lineHeight: 1.2,
               letterSpacing: '-0.01em',
             }}
@@ -144,7 +144,7 @@ function LeaderPanel({ leader, idx }: { leader: typeof leaders[0]; idx: number }
             style={{
               margin: '0 0 1.25rem',
               fontSize: 'clamp(0.78rem, 1.05vw, 0.92rem)',
-              color: 'rgba(255,255,255,0.72)',
+              color: '#334155',
               lineHeight: 1.7,
               fontStyle: 'italic',
             }}
@@ -156,7 +156,7 @@ function LeaderPanel({ leader, idx }: { leader: typeof leaders[0]; idx: number }
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <div style={{ width: '28px', height: '2px', background: leader.accent, borderRadius: '2px', flexShrink: 0 }} />
             <div>
-              <p style={{ margin: 0, fontSize: 'clamp(0.78rem, 1vw, 0.9rem)', fontWeight: 800, color: '#fff', letterSpacing: '0.02em' }}>
+              <p style={{ margin: 0, fontSize: 'clamp(0.78rem, 1vw, 0.9rem)', fontWeight: 800, color: '#0d1f35', letterSpacing: '0.02em' }}>
                 {leader.name}
               </p>
               <p style={{ margin: 0, fontSize: '0.6rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: leader.accent, marginTop: '0.15rem' }}>
@@ -201,7 +201,7 @@ export default function LeadershipMessagesSection() {
   return (
     <section
       id="leadership"
-      style={{ position: 'relative', overflow: 'hidden', background: '#040814' }}
+      style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(180deg, #d8f5f2 0%, #e8f5e8 50%, #f5f0e8 100%)' }}
     >
       {/* Section header */}
       <div
@@ -214,10 +214,10 @@ export default function LeadershipMessagesSection() {
           transition: 'opacity 0.7s ease, transform 0.7s ease',
         }}
       >
-        <p style={{ margin: '0 0 0.5rem', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)' }}>
+        <p style={{ margin: '0 0 0.5rem', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#64748b' }}>
           Leadership Perspectives
         </p>
-        <h2 style={{ margin: 0, fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', fontWeight: 900, color: '#fff', lineHeight: 1.1 }}>
+        <h2 style={{ margin: 0, fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', fontWeight: 900, color: '#0d1f35', lineHeight: 1.1 }}>
           Messages from our{' '}
           <span style={{ background: 'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
             Leadership
@@ -269,7 +269,7 @@ export default function LeadershipMessagesSection() {
             top: 0 !important; left: 0 !important; right: 0 !important;
             height: 300px !important;
             bottom: auto !important;
-            background: linear-gradient(to bottom, transparent 45%, #040814 100%) !important;
+            background: linear-gradient(to bottom, transparent 45%, #d8f5f2 100%) !important;
           }
           .leader-panel-gradient-b { display: none !important; }
 
@@ -282,7 +282,7 @@ export default function LeadershipMessagesSection() {
             align-items: flex-start !important;
             justify-content: flex-start !important;
             padding: 1.25rem 1.1rem 2rem !important;
-            background: #040814;
+            background: #d8f5f2;
           }
 
           /* Text content fills full width, no slide animations */

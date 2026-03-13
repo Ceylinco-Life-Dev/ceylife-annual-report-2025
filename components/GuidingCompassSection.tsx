@@ -1,35 +1,43 @@
 'use client';
 
+import React from 'react';
 import { useScrollAnimation, fadeUp } from '@/hooks/useScrollAnimation';
 
 const prideValues = [
   {
     letter: 'P',
     title: 'PROFESSIONALISM',
-    description:
-      'In delivering life insurance and retirement planning solutions to meet the individual needs of our customers.',
+    description: 'In delivering life insurance and retirement planning solutions to meet the individual needs of our customers.',
+    color: '#26C6DA',
+    delay: 0,
   },
   {
     letter: 'R',
     title: 'REWARDING',
-    description: 'Force, and staff for their dedication and loyalty.',
+    description: 'Our sales force, and staff for their dedication and loyalty in serving our customers.',
+    color: '#66BB6A',
+    delay: 120,
   },
   {
     letter: 'I',
     title: 'INTEGRITY',
-    description: 'In everything we do, individually and collectively.',
+    description: 'In everything we do, individually and collectively, without compromise.',
+    color: '#F5A623',
+    delay: 240,
   },
   {
     letter: 'D',
     title: 'DEDICATION',
-    description:
-      'In communicating the importance of Life Insurance and Retirement Planning to every Sri Lankan.',
+    description: 'In communicating the importance of Life Insurance and Retirement Planning to every Sri Lankan.',
+    color: '#CE93D8',
+    delay: 360,
   },
   {
     letter: 'E',
     title: 'EXCELLENCE',
-    description:
-      'In customer service, product development, innovation and fulfilling our social responsibility.',
+    description: 'In customer service, product development, innovation and fulfilling our social responsibility.',
+    color: '#FF7043',
+    delay: 480,
   },
 ];
 
@@ -40,82 +48,91 @@ export default function GuidingCompassSection() {
     <section
       id="compass"
       ref={ref as React.RefObject<HTMLElement>}
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
       style={{
-        backgroundImage: 'url(/images/truenorth-bg.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        position: 'relative',
+        background: '#f8fafc',
+        overflow: 'hidden',
+        padding: '7rem 0 8rem',
       }}
     >
-      {/* Gradient fallback */}
-      <div
-        className="absolute inset-0 -z-10"
-        style={{
-          background:
-            'linear-gradient(180deg, #020810 0%, #050E20 40%, #070A18 70%, #030810 100%)',
-        }}
-      />
+      {/* Subtle tinted blobs */}
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 65% 50% at 50% 0%, rgba(38,198,218,0.08) 0%, transparent 65%)' }} />
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 50% 65% at 0% 85%, rgba(102,187,106,0.07) 0%, transparent 60%)' }} />
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 45% 55% at 100% 85%, rgba(245,166,35,0.06) 0%, transparent 60%)' }} />
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div style={{ position:'relative', zIndex:1, maxWidth:'88rem', margin:'0 auto', padding:'0 2rem' }}>
 
-      <div className="relative z-10 w-full px-8 md:px-16 lg:px-24 py-20 max-w-7xl mx-auto">
-        {/* Title */}
-        <div className="text-center mb-14 md:mb-20" style={fadeUp(isVisible, 0)}>
-          <h2
-            className="text-white font-black uppercase leading-tight"
-            style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)' }}
-          >
-            OUR GUIDING
+        {/* Header */}
+        <div style={{ textAlign:'center', marginBottom:'3rem', ...fadeUp(isVisible, 0) }}>
+          <p style={{ margin:'0 0 0.6rem', fontSize:'0.65rem', fontWeight:700, letterSpacing:'0.3em', textTransform:'uppercase', color:'#26C6DA' }}>
+            Core Values
+          </p>
+          <h2 style={{ margin:'0 0 0.75rem', fontSize:'clamp(2.2rem,5vw,4rem)', fontWeight:900, color:'#0d1f35', lineHeight:1.1 }}>
+            OUR GUIDING{' '}
+            <span style={{ background:'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+              COMPASS
+            </span>
           </h2>
-          <h2
-            className="font-black uppercase leading-tight"
-            style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', background: 'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}
-          >
-            COMPASS
-          </h2>
+          <p style={{ margin:'0 auto', maxWidth:'34rem', fontSize:'clamp(0.85rem,1.1vw,0.95rem)', color:'#64748b', lineHeight:1.75 }}>
+            The PRIDE values that drive every action and decision at Ceylinco Life.
+          </p>
         </div>
 
-        {/* PRIDE Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-5">
-          {prideValues.map((value, index) => (
+        {/* PRIDE connector banner */}
+        <div style={{ display:'flex', justifyContent:'center', alignItems:'center', marginBottom:'3rem', ...fadeUp(isVisible, 80) }}>
+          {prideValues.map((v, i) => (
+            <React.Fragment key={v.letter}>
+              <div style={{
+                width:'46px', height:'46px', borderRadius:'50%',
+                background:`${v.color}14`, border:`2px solid ${v.color}45`,
+                display:'flex', alignItems:'center', justifyContent:'center',
+                fontSize:'1.3rem', fontWeight:900, color:v.color,
+                boxShadow:`0 2px 12px ${v.color}20`,
+              }}>
+                {v.letter}
+              </div>
+              {i < prideValues.length - 1 && (
+                <div style={{ width:'28px', height:'2px', background:`linear-gradient(90deg, ${v.color}50, ${prideValues[i+1].color}50)` }} />
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+
+        {/* Value cards */}
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(175px, 1fr))', gap:'1.25rem' }}>
+          {prideValues.map((value) => (
             <div
               key={value.letter}
-              className="rounded-2xl p-5 md:p-6 text-center flex flex-col items-center"
               style={{
-                background: 'rgba(255,255,255,0.06)',
-                backdropFilter: 'blur(12px)',
-                WebkitBackdropFilter: 'blur(12px)',
-                border: '1px solid rgba(255,255,255,0.12)',
+                background:'#ffffff',
+                borderRadius:'1.25rem',
+                padding:'2.25rem 1.5rem',
+                textAlign:'center',
+                boxShadow:`0 2px 20px rgba(0,0,0,0.05), 0 0 0 1px ${value.color}18`,
+                borderBottom:`3px solid ${value.color}`,
+                display:'flex', flexDirection:'column', alignItems:'center',
                 opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
-                transition: `opacity 0.7s ease ${200 + index * 120}ms, transform 0.7s ease ${200 + index * 120}ms`,
+                transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
+                transition: `opacity 0.7s ease ${value.delay}ms, transform 0.7s ease ${value.delay}ms`,
               }}
             >
-              {/* Letter */}
-              <div
-                className="font-black leading-none mb-3"
-                style={{ fontSize: 'clamp(3rem, 6vw, 4.5rem)', color: '#F5A623' }}
-              >
-                {value.letter}
+              {/* Letter disc */}
+              <div style={{
+                width:'68px', height:'68px', borderRadius:'50%',
+                background:`${value.color}10`,
+                display:'flex', alignItems:'center', justifyContent:'center',
+                marginBottom:'1.1rem',
+                boxShadow:`0 0 0 8px ${value.color}07`,
+              }}>
+                <span style={{ fontSize:'2.3rem', fontWeight:900, color:value.color, lineHeight:1 }}>
+                  {value.letter}
+                </span>
               </div>
 
-              {/* Title */}
-              <div
-                className="font-bold uppercase tracking-wider mb-4 leading-tight"
-                style={{
-                  fontSize: 'clamp(0.6rem, 0.9vw, 0.7rem)',
-                  color: '#F5A623',
-                }}
-              >
+              <p style={{ margin:'0 0 0.7rem', fontSize:'0.6rem', fontWeight:800, letterSpacing:'0.22em', textTransform:'uppercase', color:value.color }}>
                 {value.title}
-              </div>
-
-              {/* Description */}
-              <p
-                className="text-white/80 leading-relaxed"
-                style={{ fontSize: 'clamp(0.65rem, 0.85vw, 0.75rem)' }}
-              >
+              </p>
+              <p style={{ margin:0, fontSize:'clamp(0.72rem,0.92vw,0.8rem)', color:'#64748b', lineHeight:1.72 }}>
                 {value.description}
               </p>
             </div>

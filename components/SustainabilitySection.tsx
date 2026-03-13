@@ -40,10 +40,9 @@ function CategoryCard({ cat, visible, index }: { cat: typeof CATEGORIES[0]; visi
       opacity: visible ? 1 : 0,
       transform: visible ? 'translateY(0)' : 'translateY(24px)',
       transition: `opacity 0.6s ease ${0.5 + index * 0.1}s, transform 0.6s ease ${0.5 + index * 0.1}s`,
-      background: 'rgba(255,255,255,0.04)',
-      backdropFilter: 'blur(16px)',
-      WebkitBackdropFilter: 'blur(16px)',
-      border: `1px solid ${cat.color}30`,
+      background: 'rgba(255,255,255,0.88)',
+      border: `1px solid ${cat.color}35`,
+      boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
       borderRadius: '0.85rem',
       padding: '1rem 1rem 0.85rem',
       position: 'relative',
@@ -61,9 +60,9 @@ function CategoryCard({ cat, visible, index }: { cat: typeof CATEGORIES[0]; visi
         <p style={{ margin: 0, fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: cat.color }}>{cat.label}</p>
       </div>
 
-      <p style={{ margin: '0 0 0.6rem', fontSize: 'clamp(0.85rem,1.2vw,0.95rem)', fontWeight: 800, color: '#fff' }}>{cat.amount}</p>
+      <p style={{ margin: '0 0 0.6rem', fontSize: 'clamp(0.85rem,1.2vw,0.95rem)', fontWeight: 800, color: '#0d1f35' }}>{cat.amount}</p>
 
-      <div style={{ height: '3px', background: 'rgba(255,255,255,0.07)', borderRadius: '3px', overflow: 'hidden' }}>
+      <div style={{ height: '3px', background: 'rgba(0,0,0,0.07)', borderRadius: '3px', overflow: 'hidden' }}>
         <div style={{ height: '100%', width: visible ? `${cat.percent}%` : '0%', background: `linear-gradient(90deg, ${cat.color}80, ${cat.color})`, borderRadius: '3px', transition: `width 1.4s cubic-bezier(.4,0,.2,1) ${0.7 + index * 0.12}s`, boxShadow: `0 0 6px ${cat.color}80` }} />
       </div>
       <p style={{ margin: '0.3rem 0 0', fontSize: '0.58rem', fontWeight: 700, color: `${cat.color}bb`, letterSpacing: '0.06em' }}>{cat.percent}% of total</p>
@@ -100,7 +99,7 @@ export default function SustainabilitySection() {
     <section
       id="sustainability"
       ref={sectionRef}
-      style={{ position: 'relative', overflow: 'hidden', background: '#060d1c', padding: '4rem 0 3.5rem' }}
+      style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(160deg, #d8f5f0 0%, #e8f5e0 50%, #f5f0d8 100%)', padding: '4rem 0 3.5rem' }}
     >
       <style>{`
         ${orbitKeyframes}
@@ -151,18 +150,16 @@ export default function SustainabilitySection() {
         }
       `}</style>
 
-      {/* Watercolor clouds — same site palette */}
-      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 55% 50% at 50% 10%, rgba(0,210,225,0.30) 0%, transparent 65%)' }} />
-      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 45% 55% at 5%  45%, rgba(67,160,71,0.20) 0%, transparent 58%)' }} />
-      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 42% 38% at 18% 10%, rgba(123,31,162,0.22) 0%, transparent 58%)' }} />
-      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 48% 42% at 88% 15%, rgba(25,118,210,0.20) 0%, transparent 58%)' }} />
-      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 45% 40% at 8%  88%, rgba(216,27,96,0.15) 0%, transparent 58%)' }} />
-      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 52% 42% at 90% 90%, rgba(251,140,0,0.18) 0%, transparent 58%)' }} />
-      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'rgba(6,13,28,0.45)' }} />
+      {/* Pastel watercolor blobs */}
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 55% 50% at 50% 10%, rgba(0,188,212,0.12) 0%, transparent 65%)' }} />
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 45% 55% at 5%  45%, rgba(67,160,71,0.10) 0%, transparent 58%)' }} />
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 42% 38% at 88% 15%, rgba(25,118,210,0.09) 0%, transparent 58%)' }} />
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 45% 40% at 8%  88%, rgba(216,27,96,0.07) 0%, transparent 58%)' }} />
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 52% 42% at 90% 90%, rgba(251,140,0,0.09) 0%, transparent 58%)' }} />
 
-      {/* Fireflies */}
+      {/* Light sparkle dots */}
       {FIREFLIES.map((f, i) => (
-        <div key={i} aria-hidden style={{ position:'absolute', left:`${f.x}%`, top:`${f.y}%`, width:`${f.s}px`, height:`${f.s}px`, borderRadius:'50%', background:'radial-gradient(circle, rgba(255,255,200,0.95) 0%, rgba(200,255,150,0.5) 50%, transparent 100%)', animation:`fireflyPulse ${f.dur}s ease-in-out ${f.del}s infinite, fireflyDrift ${f.dur*1.8}s ease-in-out ${f.del*0.5}s infinite`, pointerEvents:'none' }} />
+        <div key={i} aria-hidden style={{ position:'absolute', left:`${f.x}%`, top:`${f.y}%`, width:`${f.s}px`, height:`${f.s}px`, borderRadius:'50%', background:'radial-gradient(circle, rgba(38,198,218,0.6) 0%, rgba(102,187,106,0.3) 50%, transparent 100%)', animation:`fireflyPulse ${f.dur}s ease-in-out ${f.del}s infinite, fireflyDrift ${f.dur*1.8}s ease-in-out ${f.del*0.5}s infinite`, pointerEvents:'none' }} />
       ))}
 
       {/* Content */}
@@ -170,17 +167,17 @@ export default function SustainabilitySection() {
 
         {/* Section header */}
         <div style={{ textAlign:'center', marginBottom:'2.5rem' }}>
-          <p style={{ margin:'0 0 0.5rem', fontSize:'0.62rem', fontWeight:700, letterSpacing:'0.3em', textTransform:'uppercase', color:'rgba(255,255,255,0.3)', opacity:visible?1:0, transition:'opacity 0.7s ease 0.1s' }}>
+          <p style={{ margin:'0 0 0.5rem', fontSize:'0.62rem', fontWeight:700, letterSpacing:'0.3em', textTransform:'uppercase', color:'#1a9aaa', opacity:visible?1:0, transition:'opacity 0.7s ease 0.1s' }}>
             Our Commitment to the Planet
           </p>
-          <h2 style={{ margin:'0 0 0.9rem', fontSize:'clamp(1.8rem,3.5vw,2.6rem)', fontWeight:900, lineHeight:1.1, color:'#fff', opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(20px)', transition:'opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s' }}>
+          <h2 style={{ margin:'0 0 0.9rem', fontSize:'clamp(1.8rem,3.5vw,2.6rem)', fontWeight:900, lineHeight:1.1, color:'#0d1f35', opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(20px)', transition:'opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s' }}>
             Sustainability &{' '}
             <span style={{ background:'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
               Global Goals
             </span>
           </h2>
-          <p style={{ margin:'0 auto', fontSize:'clamp(0.8rem,1vw,0.9rem)', color:'rgba(255,255,255,0.45)', maxWidth:'38rem', lineHeight:1.7, opacity:visible?1:0, transition:'opacity 0.7s ease 0.35s' }}>
-            In 2025, Ceylinco Life invested <strong style={{ color:'rgba(255,255,255,0.8)' }}>Rs. 1.180 Billion</strong> aligned with 8 UN Sustainable Development Goals — driving meaningful impact across Sri Lanka.
+          <p style={{ margin:'0 auto', fontSize:'clamp(0.8rem,1vw,0.9rem)', color:'#64748b', maxWidth:'38rem', lineHeight:1.7, opacity:visible?1:0, transition:'opacity 0.7s ease 0.35s' }}>
+            In 2025, Ceylinco Life invested <strong style={{ color:'#0d1f35' }}>Rs. 1.180 Billion</strong> aligned with 8 UN Sustainable Development Goals — driving meaningful impact across Sri Lanka.
           </p>
         </div>
 
@@ -249,9 +246,9 @@ export default function SustainabilitySection() {
                   position:'relative', width:'210px', height:'210px',
                   borderRadius:'50%', overflow:'hidden', flexShrink:0,
                   boxShadow:`
-                    0 0 50px rgba(38,198,218,0.45),
-                    0 0 100px rgba(38,198,218,0.18),
-                    inset 0 0 30px rgba(0,0,0,0.4)
+                    0 0 40px rgba(38,198,218,0.3),
+                    0 0 80px rgba(38,198,218,0.12),
+                    0 8px 32px rgba(0,0,0,0.12)
                   `,
                   animation:'earthFloat 7s ease-in-out infinite',
                 }}>
@@ -263,7 +260,7 @@ export default function SustainabilitySection() {
                   {/* Rim vignette */}
                   <div style={{
                     position:'absolute', inset:0, borderRadius:'50%',
-                    background:'radial-gradient(circle at 50% 50%, transparent 50%, rgba(0,0,0,0.45) 78%, rgba(0,0,0,0.75) 100%)',
+                    background:'radial-gradient(circle at 50% 50%, transparent 55%, rgba(232,245,240,0.35) 78%, rgba(232,245,240,0.65) 100%)',
                     pointerEvents:'none',
                   }} />
                 </div>
@@ -285,7 +282,7 @@ export default function SustainabilitySection() {
                   border:`1px solid ${sdg.color}40`,
                 }}>
                   <span style={{ width:'14px', height:'14px', borderRadius:'50%', background:sdg.color, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0, fontSize:'7px', fontWeight:900, color:'#fff' }}>{sdg.id}</span>
-                  <span style={{ fontSize:'0.55rem', fontWeight:600, color:'rgba(255,255,255,0.55)', whiteSpace:'nowrap' }}>{sdg.label}</span>
+                  <span style={{ fontSize:'0.55rem', fontWeight:600, color:'#475569', whiteSpace:'nowrap' }}>{sdg.label}</span>
                 </div>
               ))}
             </div>
@@ -298,19 +295,18 @@ export default function SustainabilitySection() {
             <div style={{
               padding:'1.25rem 1.5rem',
               borderRadius:'1rem',
-              background:'rgba(38,198,218,0.08)',
+              background:'rgba(255,255,255,0.88)',
               border:'1px solid rgba(38,198,218,0.25)',
-              backdropFilter:'blur(12px)',
-              WebkitBackdropFilter:'blur(12px)',
+              boxShadow:'0 4px 20px rgba(0,0,0,0.07)',
               opacity:visible?1:0,
               transform:visible?'translateY(0)':'translateY(20px)',
               transition:'opacity 0.7s ease 0.4s, transform 0.7s ease 0.4s',
             }}>
-              <p style={{ margin:'0 0 0.2rem', fontSize:'0.6rem', fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:'rgba(38,198,218,0.65)' }}>Total CSR Investment 2025</p>
-              <p style={{ margin:0, fontSize:'clamp(1.6rem,2.8vw,2.2rem)', fontWeight:900, color:'#fff', letterSpacing:'-0.02em' }}>
-                Rs. 1.180 <span style={{ fontSize:'0.55em', fontWeight:600, color:'rgba(255,255,255,0.5)' }}>Billion</span>
+              <p style={{ margin:'0 0 0.2rem', fontSize:'0.6rem', fontWeight:700, letterSpacing:'0.22em', textTransform:'uppercase', color:'#1a9aaa' }}>Total CSR Investment 2025</p>
+              <p style={{ margin:0, fontSize:'clamp(1.6rem,2.8vw,2.2rem)', fontWeight:900, color:'#0d1f35', letterSpacing:'-0.02em' }}>
+                Rs. 1.180 <span style={{ fontSize:'0.55em', fontWeight:600, color:'#64748b' }}>Billion</span>
               </p>
-              <div style={{ marginTop:'0.75rem', height:'3px', background:'rgba(255,255,255,0.07)', borderRadius:'3px', overflow:'hidden' }}>
+              <div style={{ marginTop:'0.75rem', height:'3px', background:'rgba(0,0,0,0.06)', borderRadius:'3px', overflow:'hidden' }}>
                 <div style={{ height:'100%', width:visible?'100%':'0%', background:'linear-gradient(90deg,#26C6DA,#66BB6A)', borderRadius:'3px', transition:'width 1.6s cubic-bezier(.4,0,.2,1) 0.6s' }} />
               </div>
             </div>
@@ -332,9 +328,9 @@ export default function SustainabilitySection() {
                 { val:'8',   label:'SDG Goals' },
                 { val:'4',   label:'Pillars' },
               ].map(({ val, label }) => (
-                <div key={label} style={{ textAlign:'center', padding:'0.7rem 0.5rem', borderRadius:'0.75rem', background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.07)' }}>
-                  <p style={{ margin:0, fontSize:'clamp(1rem,1.8vw,1.3rem)', fontWeight:900, color:'#F5A623' }}>{val}</p>
-                  <p style={{ margin:'0.1rem 0 0', fontSize:'0.55rem', fontWeight:600, letterSpacing:'0.1em', textTransform:'uppercase', color:'rgba(255,255,255,0.35)' }}>{label}</p>
+                <div key={label} style={{ textAlign:'center', padding:'0.7rem 0.5rem', borderRadius:'0.75rem', background:'rgba(255,255,255,0.82)', border:'1px solid rgba(38,198,218,0.15)', boxShadow:'0 2px 8px rgba(0,0,0,0.05)' }}>
+                  <p style={{ margin:0, fontSize:'clamp(1rem,1.8vw,1.3rem)', fontWeight:900, color:'#c47d0a' }}>{val}</p>
+                  <p style={{ margin:'0.1rem 0 0', fontSize:'0.55rem', fontWeight:600, letterSpacing:'0.1em', textTransform:'uppercase', color:'#64748b' }}>{label}</p>
                 </div>
               ))}
             </div>

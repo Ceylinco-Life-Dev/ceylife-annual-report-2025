@@ -59,13 +59,13 @@ function KPICard({
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
         transition: `all 0.9s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`,
-        background: 'rgba(4, 10, 22, 0.88)',
+        background: 'rgba(255,255,255,0.92)',
         backdropFilter: 'blur(20px) saturate(140%)',
         WebkitBackdropFilter: 'blur(20px) saturate(140%)',
-        border: '1px solid rgba(38,198,218,0.18)',
+        border: '1px solid rgba(38,198,218,0.25)',
         borderRadius: '1.25rem',
         padding: '1.75rem 1.5rem',
-        boxShadow: '0 8px 40px rgba(0,0,0,0.55), inset 0 1px 0 rgba(38,198,218,0.06)',
+        boxShadow: '0 4px 24px rgba(0,0,0,0.07), inset 0 0 0 1px rgba(38,198,218,0.15)',
         display: 'flex',
         flexDirection: 'column',
         gap: '0.75rem',
@@ -88,7 +88,7 @@ function KPICard({
         fontWeight: 700,
         letterSpacing: '0.18em',
         textTransform: 'uppercase',
-        color: 'rgba(38,198,218,0.6)',
+        color: '#1a9aaa',
       }}>
         {kpi.label}
       </p>
@@ -99,29 +99,29 @@ function KPICard({
         fontSize: 'clamp(2rem, 3.8vw, 2.8rem)',
         fontWeight: 900,
         lineHeight: 1,
-        color: '#ffffff',
+        color: '#0d1f35',
         letterSpacing: '-0.02em',
-        textShadow: '0 2px 16px rgba(255,255,255,0.15)',
+        textShadow: 'none',
       }}>
-        <span style={{ fontSize: '48%', fontWeight: 700, color: 'rgba(255,255,255,0.55)', marginRight: '2px' }}>
+        <span style={{ fontSize: '48%', fontWeight: 700, color: '#64748b', marginRight: '2px' }}>
           {kpi.prefix}
         </span>
         {fmt(count, kpi.decimals)}
         {kpi.suffix && (
-          <span style={{ fontSize: '42%', fontWeight: 600, color: 'rgba(255,255,255,0.45)', marginLeft: '3px' }}>
+          <span style={{ fontSize: '42%', fontWeight: 600, color: '#64748b', marginLeft: '3px' }}>
             {kpi.suffix}
           </span>
         )}
       </p>
 
       {/* Divider */}
-      <div style={{ height: '1px', background: 'rgba(255,255,255,0.06)' }} />
+      <div style={{ height: '1px', background: 'rgba(0,0,0,0.06)' }} />
 
       {/* Comparison row */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
         <div>
-          <span style={{ fontSize: '0.6rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.08em' }}>2024 </span>
-          <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'rgba(255,255,255,0.45)' }}>
+          <span style={{ fontSize: '0.6rem', color: '#94a3b8', letterSpacing: '0.08em' }}>2024 </span>
+          <span style={{ fontSize: '0.7rem', fontWeight: 600, color: '#64748b' }}>
             {kpi.prefix} {fmt(kpi.value2024, kpi.decimals)}{kpi.suffix}
           </span>
         </div>
@@ -157,30 +157,30 @@ export default function KPISection() {
       style={{
         position: 'relative',
         padding: '6rem 0',
-        background: '#070e1a',
+        background: 'linear-gradient(160deg, #d8f5f0 0%, #e8f8e8 55%, #f5f8d8 100%)',
         overflow: 'hidden',
       }}
     >
       {/* Watercolor cloud layers — darker/subtler */}
-      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 65% 50% at 80% 15%, rgba(0,188,212,0.22) 0%, transparent 65%)' }} />
-      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 50% 50% at 10% 30%, rgba(67,160,71,0.18) 0%, transparent 60%)' }} />
-      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 42% 38% at 20% 8%, rgba(103,58,183,0.20) 0%, transparent 58%)' }} />
-      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 44% 40% at 5% 88%, rgba(194,24,91,0.18) 0%, transparent 58%)' }} />
-      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 50% 42% at 92% 88%, rgba(230,119,0,0.18) 0%, transparent 60%)' }} />
-      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'rgba(4,9,20,0.55)' }} />
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 65% 50% at 80% 15%, rgba(0,188,212,0.14) 0%, transparent 65%)' }} />
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 50% 50% at 10% 30%, rgba(67,160,71,0.12) 0%, transparent 60%)' }} />
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 42% 38% at 20% 8%, rgba(103,58,183,0.10) 0%, transparent 58%)' }} />
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 44% 40% at 5% 88%, rgba(194,24,91,0.10) 0%, transparent 58%)' }} />
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 50% 42% at 92% 88%, rgba(230,119,0,0.10) 0%, transparent 60%)' }} />
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'rgba(255,255,255,0.2)' }} />
 
       <div style={{ position:'relative', zIndex:1, maxWidth:'90rem', margin:'0 auto', padding:'0 2rem' }}>
 
         {/* Section heading */}
         <div style={{ textAlign:'center', marginBottom:'3.5rem', ...fadeUp(isVisible, 0) }}>
-          <p style={{ fontSize:'clamp(0.62rem,0.9vw,0.78rem)', fontWeight:700, letterSpacing:'0.32em', textTransform:'uppercase', color:'#26C6DA', marginBottom:'0.8rem', opacity:0.85 }}>
+          <p style={{ fontSize:'clamp(0.62rem,0.9vw,0.78rem)', fontWeight:700, letterSpacing:'0.32em', textTransform:'uppercase', color:'#1a9aaa', marginBottom:'0.8rem', opacity:0.85 }}>
             Financial Highlights 2025
           </p>
-          <h2 style={{ fontSize:'clamp(1.8rem,4.2vw,3.2rem)', fontWeight:900, textTransform:'uppercase', color:'#fff', letterSpacing:'-0.02em', margin:'0 0 0.5rem', textShadow:'0 4px 20px rgba(0,188,212,0.15)' }}>
+          <h2 style={{ fontSize:'clamp(1.8rem,4.2vw,3.2rem)', fontWeight:900, textTransform:'uppercase', color:'#0d1f35', letterSpacing:'-0.02em', margin:'0 0 0.5rem' }}>
             Key Performance
             <span style={{ background:'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}> Indicators</span>
           </h2>
-          <p style={{ margin:0, fontSize:'clamp(0.7rem,0.9vw,0.82rem)', color:'rgba(255,255,255,0.35)', letterSpacing:'0.08em' }}>
+          <p style={{ margin:0, fontSize:'clamp(0.7rem,0.9vw,0.82rem)', color:'#64748b', letterSpacing:'0.08em' }}>
             All figures in Sri Lankan Rupees · Year ended 31 December 2025
           </p>
         </div>
@@ -191,8 +191,8 @@ export default function KPISection() {
           flexWrap:'wrap',
           marginBottom:'2.5rem',
           padding:'1rem 2rem',
-          background:'rgba(38,198,218,0.06)',
-          border:'1px solid rgba(38,198,218,0.15)',
+          background:'rgba(255,255,255,0.7)',
+          border:'1px solid rgba(38,198,218,0.22)',
           borderRadius:'0.875rem',
           ...fadeUp(isVisible, 100),
         }}>
@@ -202,8 +202,8 @@ export default function KPISection() {
             { val: 'Rs. 287 Bn', label: 'Total Assets 2025' },
           ].map(item => (
             <div key={item.label} style={{ textAlign:'center' }}>
-              <p style={{ margin:0, fontSize:'clamp(1rem,1.8vw,1.4rem)', fontWeight:900, color:'#F5A623', letterSpacing:'-0.01em' }}>{item.val}</p>
-              <p style={{ margin:'0.15rem 0 0', fontSize:'0.58rem', fontWeight:600, letterSpacing:'0.12em', textTransform:'uppercase', color:'rgba(255,255,255,0.35)' }}>{item.label}</p>
+              <p style={{ margin:0, fontSize:'clamp(1rem,1.8vw,1.4rem)', fontWeight:900, color:'#c47d0a', letterSpacing:'-0.01em' }}>{item.val}</p>
+              <p style={{ margin:'0.15rem 0 0', fontSize:'0.58rem', fontWeight:600, letterSpacing:'0.12em', textTransform:'uppercase', color:'#64748b' }}>{item.label}</p>
             </div>
           ))}
         </div>
