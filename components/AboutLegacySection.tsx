@@ -15,8 +15,8 @@ export default function AboutLegacySection() {
         ref={aboutAnim.ref as React.RefObject<HTMLDivElement>}
         style={{
           position: 'relative',
-          minHeight: '100vh',
-          display: 'flex', alignItems: 'center',
+          minHeight: '20vh',
+          display: 'flex', alignItems: 'justifyContent: center',
           background: 'linear-gradient(160deg, #d8f5f0 0%, #e8f5e0 50%, #f5f0d8 100%)',
           overflow: 'hidden',
         }}
@@ -34,17 +34,16 @@ export default function AboutLegacySection() {
             {/* Left: All content — label, heading, bar, body text, stats */}
             <div style={slideRight(aboutAnim.isVisible, 100)}>
               <h2 style={{ margin:'0 0 1.25rem', fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, color:'#0d1f35', lineHeight:1, letterSpacing:'-0.02em', textTransform:'uppercase' }}>
-                ABOUT<br />
-                <span style={{ background:'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>US</span>
+                ABOUT
+                <span style={{ background:'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}> US</span>
               </h2>
-              <div style={{ width:'52px', height:'3px', background:'#F5A623', borderRadius:'2px', marginBottom:'1.75rem', opacity:aboutAnim.isVisible?1:0, transform:aboutAnim.isVisible?'scaleX(1)':'scaleX(0)', transformOrigin:'left', transition:'opacity 0.6s ease 400ms, transform 0.6s ease 400ms' }} />
               <p style={{ margin:'0 0 2rem', fontSize:'clamp(0.95rem,1.35vw,1.05rem)', color:'#334155', lineHeight:1.88, fontWeight:400 }}>
                 Ceylinco Life Insurance Limited is guided by an enduring North Star — one that has shaped its journey across decades, anchoring growth in trust, protection, and long-term value creation. These guiding principles reflect the Company&apos;s constant commitment to safeguarding lives today, while building resilience and security for generations to come. From its roots in Sri Lanka&apos;s earliest insurance institutions to its position today as the undisputed market leader in life insurance, Ceylinco Life&apos;s evolution is defined by foresight, resilience, and purposeful innovation.
               </p>
             </div>
 
             {/* Right: Shield image */}
-            <div style={{ ...slideRight(aboutAnim.isVisible, 300), display:'flex', justifyContent:'center', alignItems:'center' }}>
+            {/* <div style={{ ...slideRight(aboutAnim.isVisible, 300), display:'flex', justifyContent:'center', alignItems:'center' }}>
               <img
                 src="/images/aboutus.png"
                 alt="Ceylinco Life Shield"
@@ -58,16 +57,16 @@ export default function AboutLegacySection() {
                   transition: 'opacity 0.8s ease 350ms, transform 0.8s ease 350ms',
                 }}
               />
-            </div>
+            </div> */}
           </div>
         </div>
 
         {/* Scroll arrow */}
-        <div style={{ position:'absolute', bottom:'1.5rem', left:'50%', transform:'translateX(-50%)', ...fadeIn(aboutAnim.isVisible, 600) }}>
+        {/* <div style={{ position:'absolute', bottom:'1.5rem', left:'50%', transform:'translateX(-50%)', ...fadeIn(aboutAnim.isVisible, 600) }}>
           <svg viewBox="0 0 24 24" fill="none" style={{ width:'1.5rem', height:'1.5rem', animation:'bounce 2s infinite' }}>
             <path d="M12 5v14M12 19l-5-5M12 19l5-5" stroke="rgba(0,0,0,0.18)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-        </div>
+        </div> */}
       </div>
 
       {/* ── Panel 2: Legacy of Leadership ────────────────────── */}
@@ -77,7 +76,7 @@ export default function AboutLegacySection() {
           position: 'relative',
           minHeight: '100vh',
           display: 'flex', alignItems: 'center',
-          background: 'linear-gradient(160deg, #d8f5f0 0%, #e8f5e0 50%, #f5f0d8 100%)',
+          background: 'linear-gradient(160deg, #f5f0d8 0%, #e8f5e0 50%, #d8f5f0 85%)',
           overflow: 'hidden',
         }}
       >
