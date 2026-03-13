@@ -174,7 +174,7 @@ function LeaderPanel({ leader, idx }: { leader: typeof leaders[0]; idx: number }
           position: 'absolute',
           bottom: 0,
           [leader.imageLeft ? 'right' : 'left']: 0,
-          width: '45%',
+          width: '35%',
           height: '2px',
           background: `linear-gradient(${leader.imageLeft ? 'to left' : 'to right'}, ${leader.accent}, transparent)`,
         }}

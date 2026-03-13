@@ -99,8 +99,10 @@ export default function SustainabilitySection() {
     <section
       id="sustainability"
       ref={sectionRef}
-      style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(160deg, #d8f5f0 0%, #e8f5e0 50%, #f5f0d8 100%)', padding: '4rem 0 3.5rem' }}
+      style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(160deg, #f5f0d8 0%, #e8f5e0 50%, #d8f5f0 100%)', padding: '4rem 0 3.5rem' }}
     >
+          {/* background: 'linear-gradient(160deg, #d8f5f0 0%, #e8f5e0 50%, #f5f0d8 100%)', */}
+
       <style>{`
         ${orbitKeyframes}
 

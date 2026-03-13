@@ -326,8 +326,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ── Divider ── */}
-      <div style={{ position: 'relative', zIndex: 1, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(38,198,218,0.3), transparent)' }} />
+      
 
       {/* ── Bottom bar ── */}
       <div style={{
@@ -364,6 +363,17 @@ export default function Footer() {
       </div>
 
       <style>{`
+        @keyframes marquee-scroll {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .awards-marquee {
+          animation: marquee-scroll 28s linear infinite;
+          width: max-content;
+        }
+        .awards-marquee:hover {
+          animation-play-state: paused;
+        }
         @media (max-width: 640px) {
           footer > div:nth-child(3) > div {
             grid-template-columns: 1fr !important;

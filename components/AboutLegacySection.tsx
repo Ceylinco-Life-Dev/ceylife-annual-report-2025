@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { useScrollAnimation, slideLeft, slideRight, fadeUp, fadeIn } from '@/hooks/useScrollAnimation';
+import { useScrollAnimation, slideLeft, slideRight, fadeUp } from '@/hooks/useScrollAnimation';
 
 export default function AboutLegacySection() {
   const aboutAnim = useScrollAnimation({ threshold: 0.15 });
@@ -137,6 +137,93 @@ export default function AboutLegacySection() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Awards & Recognition ── */}
+      <div style={{ position: 'relative', zIndex: 1, padding: '3.5rem 0 3rem', background: 'linear-gradient(160deg, #d8f5f0 0%, #e8f5e0 50%, #f5f0d8 85%)', borderTop: '1px solid rgba(38,198,218,0.15)', borderBottom: '1px solid rgba(38,198,218,0.15)' }}>
+
+        {/* Heading */}
+        <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+          <h2 style={{ margin:'0 0 0.2rem', fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, color:'#0d1f35', lineHeight:0.95, textTransform:'uppercase' }}>
+            EXCELLANCE RECOGNISED
+          </h2>
+          <h2 style={{ margin:'0 0 1.75rem',  fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, lineHeight:0.95, textTransform:'uppercase', background:'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+            AWARDS
+          </h2>
+        </div>
+
+        {/* Marquee track */}
+        <div style={{ overflow: 'hidden', position: 'relative' }}>
+          {/* Left/right fade edges */}
+          <div aria-hidden style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '8rem', background: 'linear-gradient(to right, rgba(255,255,255,0.35), transparent)', zIndex: 2, pointerEvents: 'none' }} />
+          <div aria-hidden style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '8rem', background: 'linear-gradient(to left, rgba(255,255,255,0.35), transparent)', zIndex: 2, pointerEvents: 'none' }} />
+
+          <div className="awards-marquee" style={{ display: 'flex', gap: '1.5rem', padding: '0.5rem 1.5rem' }}>
+            {[...Array(2)].flatMap((_, pass) =>
+              [
+                { src: '/images/01.jpg',            title: "People's Life Insurance Brand of the Year",   org: 'SLIM Kantar Peoples Awards 2025' },
+                { src: '/images/02.jpg',            title: 'Distinguished Recognition',                   org: 'CMA Sri Lanka' },
+                { src: '/images/08.jpg',            title: 'Silver – Insurance Companies',                org: 'TAGS Awards 2025' },
+                { src: '/images/09.jpg',            title: 'Sustainability Reporting Award',              org: 'ACCA Sri Lanka 2025' },
+                { src: '/images/10.jpg',            title: 'Other Financial Services Category Winner',    org: 'ACCA Sri Lanka 2025' },
+                { src: '/images/World Finance.jpg', title: 'Best Life Insurance Company',                 org: 'World Finance Insurance Awards 2024' },
+              ].map(({ src, title, org }) => (
+                <div
+                  key={`${pass}-${src}`}
+                  style={{
+                    flexShrink: 0,
+                    width: '200px',
+                    borderRadius: '1.25rem',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                    cursor: 'default',
+                  }}
+                  onMouseEnter={(e) => {
+                    const el = e.currentTarget as HTMLDivElement;
+                    el.style.transform = 'translateY(-6px) scale(1.02)';
+                    el.style.boxShadow = '0 16px 40px rgba(38,198,218,0.2)';
+                  }}
+                  onMouseLeave={(e) => {
+                    const el = e.currentTarget as HTMLDivElement;
+                    el.style.transform = 'translateY(0) scale(1)';
+                    el.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)';
+                  }}
+                >
+                  {/* Image + overlay caption */}
+                  <div style={{ position: 'relative', height: '260px', overflow: 'hidden' }}>
+                    <img
+                      src={src}
+                      alt={title}
+                      style={{
+                        position: 'absolute',
+                        inset: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'center top',
+                        transition: 'transform 0.4s ease',
+                      }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLImageElement).style.transform = 'scale(1.06)'; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLImageElement).style.transform = 'scale(1)'; }}
+                    />
+                    {/* Caption gradient overlay */}
+                    <div style={{
+                      position: 'absolute',
+                      bottom: 0, left: 0, right: 0,
+                      padding: '2rem 1rem 1rem',
+                      background: 'linear-gradient(to top, rgba(5,13,26,0.82) 0%, transparent 100%)',
+                    }}>
+                      <p style={{ margin: '0 0 0.2rem', fontSize: '0.72rem', fontWeight: 700, color: '#ffffff', lineHeight: 1.4 }}>{title}</p>
+                      <p style={{ margin: 0, fontSize: '0.58rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#26C6DA' }}>{org}</p>
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>

@@ -106,7 +106,7 @@ function SiriOrbHeader({ listening, speaking }: { listening: boolean; speaking: 
         : '0 0 0 1.5px rgba(38,198,218,0.25), 0 4px 16px rgba(38,198,218,0.2)',
       transition: 'box-shadow 0.5s ease',
     }}>
-      <div style={{ position: 'absolute', inset: 0, background: '#0a0f1e' }} />
+      <div style={{ position: 'absolute', inset: 0, background: '#0a0f1e11' }} />
       <div style={{ position: 'absolute', width: '150%', height: '130%', top: '-15%', left: '-15%',
         background: speaking
           ? 'conic-gradient(from 0deg at 40% 40%, #F5A623 0deg, transparent 100deg, #CE93D8 200deg, #FF6B6B 300deg, transparent 360deg)'
@@ -123,7 +123,7 @@ function SiriOrbHeader({ listening, speaking }: { listening: boolean; speaking: 
       <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         {listening ? (
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" fill="rgba(255,255,255,0.2)"/>
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" fill="rgba(255, 255, 255, 0.01)"/>
             <path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/>
           </svg>
         ) : speaking ? (
@@ -138,7 +138,7 @@ function SiriOrbHeader({ listening, speaking }: { listening: boolean; speaking: 
             <polygon points="16,29 17.5,19 16,17 14.5,19" fill="rgba(200,220,255,0.8)"/>
             <polygon points="29,16 19,14.5 17,16 19,17.5" fill="rgba(200,220,255,0.6)"/>
             <polygon points="3,16  13,14.5 15,16 13,17.5" fill="rgba(200,220,255,0.6)"/>
-            <circle cx="16" cy="16" r="2.8" fill="rgba(10,15,30,0.85)" stroke="rgba(255,255,255,0.3)" strokeWidth="0.5"/>
+            <circle cx="16" cy="16" r="2.8" fill="rgba(10, 15, 30, 0)" stroke="rgba(255,255,255,0.3)" strokeWidth="0.5"/>
             <circle cx="16" cy="16" r="1.4" fill="#26C6DA"/>
           </svg>
         )}

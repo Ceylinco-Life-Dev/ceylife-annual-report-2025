@@ -39,7 +39,7 @@ export default function TrueNorthSection() {
       ref={ref as React.RefObject<HTMLElement>}
       style={{
         position: 'relative',
-        background: 'linear-gradient(160deg, #f0f8ff 0%, #f5fff5 55%, #fffbf0 100%)',
+        background: 'linear-gradient(160deg, #f0f8ff 0%, #e8f5e8 55%, #d8f5f2 100%)',
         overflow: 'hidden',
         padding: '7rem 0 8rem',
       }}
