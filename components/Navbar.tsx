@@ -70,7 +70,7 @@ export default function Navbar() {
         zIndex: 500,
         padding: scrolled ? '0.6rem 2rem' : '1.1rem 2rem',
         background: scrolled
-          ? 'rgba(255,255,255,0.96)'
+          ? 'rgba(255, 255, 255, 0.28)'
           : 'linear-gradient(180deg, rgba(0,0,0,0.6) 0%, transparent 100%)',
         backdropFilter: scrolled ? 'blur(18px) saturate(150%)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(18px) saturate(150%)' : 'none',
