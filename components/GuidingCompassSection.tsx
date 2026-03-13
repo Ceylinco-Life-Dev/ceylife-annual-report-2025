@@ -50,11 +50,25 @@ export default function GuidingCompassSection() {
       ref={ref as React.RefObject<HTMLElement>}
       style={{
         position: 'relative',
-        background: '#f8fafc',
+        background: 'linear-gradient(160deg, #d8f5f0 0%, #e8f5e0 50%, #f5f0d8 100%)',
         overflow: 'hidden',
         padding: '7rem 0 8rem',
       }}
     >
+      {/* Compass watermark */}
+      <div aria-hidden style={{
+        position: 'absolute', inset: 0, pointerEvents: 'none',
+        backgroundImage: 'url(/images/pride.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        opacity: 0.50,
+        mixBlendMode: 'multiply',
+      }} />
+      {/* Pastel overlay */}
+      <div aria-hidden style={{
+        position: 'absolute', inset: 0, pointerEvents: 'none',
+        background: 'linear-gradient(160deg, rgba(216,245,240,0.82) 0%, rgba(232,245,224,0.82) 50%, rgba(245,240,216,0.82) 100%)',
+      }} />
       {/* Subtle tinted blobs */}
       <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 65% 50% at 50% 0%, rgba(38,198,218,0.08) 0%, transparent 65%)' }} />
       <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 50% 65% at 0% 85%, rgba(102,187,106,0.07) 0%, transparent 60%)' }} />
@@ -67,7 +81,7 @@ export default function GuidingCompassSection() {
           <p style={{ margin:'0 0 0.6rem', fontSize:'0.65rem', fontWeight:700, letterSpacing:'0.3em', textTransform:'uppercase', color:'#26C6DA' }}>
             Core Values
           </p>
-          <h2 style={{ margin:'0 0 0.75rem', fontSize:'clamp(2.2rem,5vw,4rem)', fontWeight:900, color:'#0d1f35', lineHeight:1.1 }}>
+          <h2 style={{ margin:'0 0 0.75rem', fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, color:'#0d1f35', lineHeight:1.1 }}>
             OUR GUIDING{' '}
             <span style={{ background:'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
               COMPASS

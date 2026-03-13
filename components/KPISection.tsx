@@ -176,7 +176,7 @@ export default function KPISection() {
           <p style={{ fontSize:'clamp(0.62rem,0.9vw,0.78rem)', fontWeight:700, letterSpacing:'0.32em', textTransform:'uppercase', color:'#1a9aaa', marginBottom:'0.8rem', opacity:0.85 }}>
             Financial Highlights 2025
           </p>
-          <h2 style={{ fontSize:'clamp(1.8rem,4.2vw,3.2rem)', fontWeight:900, textTransform:'uppercase', color:'#0d1f35', letterSpacing:'-0.02em', margin:'0 0 0.5rem' }}>
+          <h2 style={{ fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, textTransform:'uppercase', color:'#0d1f35', letterSpacing:'-0.02em', margin:'0 0 0.5rem' }}>
             Key Performance
             <span style={{ background:'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}> Indicators</span>
           </h2>

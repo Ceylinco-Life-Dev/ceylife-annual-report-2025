@@ -170,7 +170,7 @@ export default function SustainabilitySection() {
           <p style={{ margin:'0 0 0.5rem', fontSize:'0.62rem', fontWeight:700, letterSpacing:'0.3em', textTransform:'uppercase', color:'#1a9aaa', opacity:visible?1:0, transition:'opacity 0.7s ease 0.1s' }}>
             Our Commitment to the Planet
           </p>
-          <h2 style={{ margin:'0 0 0.9rem', fontSize:'clamp(1.8rem,3.5vw,2.6rem)', fontWeight:900, lineHeight:1.1, color:'#0d1f35', opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(20px)', transition:'opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s' }}>
+          <h2 style={{ margin:'0 0 0.9rem', fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, lineHeight:1.1, color:'#0d1f35', opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(20px)', transition:'opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s' }}>
             Sustainability &{' '}
             <span style={{ background:'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
               Global Goals

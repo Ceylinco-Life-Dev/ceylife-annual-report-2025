@@ -161,8 +161,21 @@ export default function LegacyMilestonesSection() {
     <section
       id="milestones"
       ref={ref as React.RefObject<HTMLElement>}
-      style={{ position:'relative', background:'#f8fafc', overflow:'hidden', padding:'5.5rem 0 5rem' }}
+      style={{ position:'relative', background:'linear-gradient(160deg, #d8f5f0 0%, #e8f5e0 50%, #f5f0d8 100%)', overflow:'hidden', padding:'5.5rem 0 5rem' }}
     >
+      {/* Head office watermark — vintage building behind the timeline */}
+      <div aria-hidden style={{
+        position: 'absolute', inset: 0, pointerEvents: 'none',
+        backgroundImage: 'url(/images/headoffice.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center 30%',
+        backgroundRepeat: 'no-repeat',
+        opacity: 0.50,
+        mixBlendMode: 'multiply',
+      }} />
+      {/* Pastel overlay to keep section readable */}
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'linear-gradient(160deg, rgba(216,245,240,0.82) 0%, rgba(232,245,224,0.82) 50%, rgba(245,240,216,0.82) 100%)' }} />
+
       {/* Soft background blobs */}
       <div aria-hidden style={{ position:'absolute', top:0, right:'10%', width:'40vw', height:'40vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(38,198,218,0.07) 0%, transparent 65%)', pointerEvents:'none' }} />
       <div aria-hidden style={{ position:'absolute', bottom:'5%', left:'5%', width:'35vw', height:'35vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(245,166,35,0.07) 0%, transparent 65%)', pointerEvents:'none' }} />
@@ -174,7 +187,7 @@ export default function LegacyMilestonesSection() {
           <p style={{ ...fadeUp(isVisible, 0), margin:'0 0 0.4rem', fontSize:'0.65rem', fontWeight:700, letterSpacing:'0.3em', textTransform:'uppercase', color:'#F5A623' }}>
             Since 1988
           </p>
-          <h2 style={{ ...fadeUp(isVisible, 80), margin:0, fontSize:'clamp(1.6rem,3.2vw,2.6rem)', fontWeight:900, textTransform:'uppercase', color:'#0d1f35', lineHeight:1.1, letterSpacing:'-0.01em' }}>
+          <h2 style={{ ...fadeUp(isVisible, 80), margin:0, fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, textTransform:'uppercase', color:'#0d1f35', lineHeight:1.1, letterSpacing:'-0.01em' }}>
             37 Years of{' '}
             <span style={{ background:'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Trust &amp; Promise</span>
           </h2>

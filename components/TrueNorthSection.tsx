@@ -6,7 +6,7 @@ import { useScrollAnimation, fadeUp } from '@/hooks/useScrollAnimation';
 const pillars = [
   {
     num: '01',
-    accent: '#26C6DA',
+    accent: '#d39145',
     label: 'Vision',
     title: 'OUR GUIDING STAR',
     text: 'To take the message of life insurance and retirement planning to every Sri Lankan and provide protection to every family.',
@@ -14,7 +14,7 @@ const pillars = [
   },
   {
     num: '02',
-    accent: '#66BB6A',
+    accent: '#94531d',
     label: 'Mission',
     title: 'OUR PATH FORWARD',
     text: 'To become the most trusted, acclaimed and progressive life insurance company in Sri Lanka, by providing need-based life insurance solutions to our customers, recognising and rewarding our employees, creating successful partnerships with stakeholders and ensuring sustainable business practices for responsible and profitable growth.',
@@ -22,7 +22,7 @@ const pillars = [
   },
   {
     num: '03',
-    accent: '#F5A623',
+    accent: '#c9c90e',
     label: 'Purpose',
     title: 'OUR TRUE NORTH',
     text: 'The enduring compass that shapes every decision — from product innovation to community investment — anchoring our journey toward a future where every Sri Lankan family is protected and secure.',
@@ -44,6 +44,16 @@ export default function TrueNorthSection() {
         padding: '7rem 0 8rem',
       }}
     >
+       {/* Compass watermark */}
+      <div aria-hidden style={{
+        position: 'absolute', inset: 0, pointerEvents: 'none',
+        backgroundImage: 'url(/images/north.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        opacity: 0.15,
+        mixBlendMode: 'multiply',
+      }} />
+      
       {/* Decorative soft orbs */}
       <div aria-hidden style={{ position:'absolute', top:'-12%', left:'-8%', width:'55vw', height:'55vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(38,198,218,0.1) 0%, transparent 65%)', pointerEvents:'none' }} />
       <div aria-hidden style={{ position:'absolute', bottom:'-10%', right:'-6%', width:'42vw', height:'42vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(102,187,106,0.1) 0%, transparent 65%)', pointerEvents:'none' }} />
@@ -59,7 +69,7 @@ export default function TrueNorthSection() {
           <p style={{ margin:'0 0 0.6rem', fontSize:'0.65rem', fontWeight:700, letterSpacing:'0.32em', textTransform:'uppercase', color:'#26C6DA' }}>
             Principles &amp; Purpose
           </p>
-          <h2 style={{ margin:'0 0 0.9rem', fontSize:'clamp(2rem,4.5vw,3.5rem)', fontWeight:900, color:'#0d1f35', lineHeight:1.1, letterSpacing:'-0.01em' }}>
+          <h2 style={{ margin:'0 0 0.9rem', fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, color:'#0d1f35', lineHeight:1.1, letterSpacing:'-0.01em' }}>
             OUR TRUE{' '}
             <span style={{ background:'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>NORTH</span>
           </h2>
@@ -74,7 +84,7 @@ export default function TrueNorthSection() {
             <div
               key={p.num}
               style={{
-                background:'#ffffff',
+                background:'#ffffff50',
                 borderRadius:'1.5rem',
                 padding:'2.5rem 2rem 2.75rem',
                 boxShadow:`0 2px 24px rgba(0,0,0,0.055), inset 0 0 0 1px ${p.accent}1a`,

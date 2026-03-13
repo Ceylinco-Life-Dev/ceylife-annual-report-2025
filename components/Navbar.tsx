@@ -50,6 +50,16 @@ export default function Navbar() {
     setMenuOpen(false);
   }
 
+  // Color tokens — hero = transparent dark, scrolled = white light
+  const linkColor = scrolled ? '#475569' : 'rgba(255,255,255,0.82)';
+  const linkActiveColor = scrolled ? '#0891b2' : '#F5A623';
+  const linkHoverColor = scrolled ? '#0d1f35' : '#fff';
+  const subtitleColor = scrolled ? '#94a3b8' : 'rgba(255,255,255,0.5)';
+  const svgStroke = scrolled ? '#475569' : '#fcfcfc';
+  const dlBorder = scrolled ? 'rgba(8,145,178,0.4)' : 'rgba(255,255,255,0.5)';
+  const dlColor = scrolled ? '#0891b2' : '#e8edee';
+  const hamburgerColor = scrolled ? '#334155' : '#fff';
+
   return (
     <nav
       style={{
@@ -60,13 +70,13 @@ export default function Navbar() {
         zIndex: 500,
         padding: scrolled ? '0.6rem 2rem' : '1.1rem 2rem',
         background: scrolled
-          ? 'linear-gradient(135deg, rgba(57, 139, 210, 0.11) 0%, rgba(240, 58, 73, 0) 50%, rgba(214, 19, 94, 0) 100%)'
+          ? 'rgba(255,255,255,0.96)'
           : 'linear-gradient(180deg, rgba(0,0,0,0.6) 0%, transparent 100%)',
-        backdropFilter: scrolled ? 'blur(18px)' : 'none',
-        WebkitBackdropFilter: scrolled ? 'blur(18px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(0,188,212,0.12)' : 'none',
-        boxShadow: scrolled ? '0 4px 30px rgba(0,100,130,0.15)' : 'none',
-        transition: 'padding 0.35s ease, background 0.35s ease, border-color 0.35s ease',
+        backdropFilter: scrolled ? 'blur(18px) saturate(150%)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(18px) saturate(150%)' : 'none',
+        borderBottom: scrolled ? '1px solid rgba(38,198,218,0.18)' : 'none',
+        boxShadow: scrolled ? '0 2px 20px rgba(0,0,0,0.07)' : 'none',
+        transition: 'padding 0.35s ease, background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -93,18 +103,21 @@ export default function Navbar() {
             height: scrolled ? '2.4rem' : '2.8rem',
             width: 'auto',
             objectFit: 'contain',
-            transition: 'height 0.35s ease',
-            filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))',
+            transition: 'height 0.35s ease, filter 0.35s ease',
+            filter: scrolled
+              ? 'none'
+              : 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))',
           }}
         />
         <span
           style={{
-            color: 'rgba(255,255,255,0.5)',
+            color: subtitleColor,
             fontWeight: 500,
             fontSize: 'clamp(0.5rem, 0.72vw, 0.6rem)',
             letterSpacing: '0.2em',
             textTransform: 'uppercase',
             whiteSpace: 'nowrap',
+            transition: 'color 0.35s ease',
           }}
         >
           Annual Report 2025
@@ -134,7 +147,7 @@ export default function Navbar() {
                   border: 'none',
                   cursor: 'pointer',
                   padding: '0.25rem 0',
-                  color: isActive ? '#535353' : 'rgba(255,255,255,0.75)',
+                  color: isActive ? linkActiveColor : linkColor,
                   fontWeight: isActive ? 700 : 500,
                   fontSize: 'clamp(0.65rem, 0.9vw, 0.78rem)',
                   letterSpacing: '0.1em',
@@ -144,16 +157,14 @@ export default function Navbar() {
                 }}
                 onMouseEnter={(e) =>
                   !isActive &&
-                  ((e.currentTarget as HTMLButtonElement).style.color = '#fff')
+                  ((e.currentTarget as HTMLButtonElement).style.color = linkHoverColor)
                 }
                 onMouseLeave={(e) =>
                   !isActive &&
-                  ((e.currentTarget as HTMLButtonElement).style.color =
-                    'rgba(255,255,255,0.75)')
+                  ((e.currentTarget as HTMLButtonElement).style.color = linkColor)
                 }
               >
                 {link.label}
-                {/* Active underline */}
                 <span
                   style={{
                     position: 'absolute',
@@ -183,34 +194,31 @@ export default function Navbar() {
           gap: '0.4rem',
           padding: '0.45rem 1rem',
           borderRadius: '999px',
-          border: '1px solid rgba(255, 255, 255, 0.5)',
-          color: '#e8edee',
+          border: `1px solid ${dlBorder}`,
+          color: dlColor,
           fontWeight: 700,
           fontSize: 'clamp(0.58rem, 0.8vw, 0.7rem)',
           letterSpacing: '0.12em',
           textTransform: 'uppercase',
           textDecoration: 'none',
-          transition: 'background 0.2s, border-color 0.2s',
+          transition: 'background 0.2s, border-color 0.2s, color 0.35s',
           whiteSpace: 'nowrap',
           flexShrink: 0,
         }}
         onMouseEnter={(e) => {
-          (e.currentTarget as HTMLAnchorElement).style.background =
-            'rgba(0,188,212,0.12)';
-          (e.currentTarget as HTMLAnchorElement).style.borderColor =
-            'rgba(255, 255, 255, 0.9)';
+          (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(0,188,212,0.1)';
+          (e.currentTarget as HTMLAnchorElement).style.borderColor = '#26C6DA';
         }}
         onMouseLeave={(e) => {
           (e.currentTarget as HTMLAnchorElement).style.background = 'transparent';
-          (e.currentTarget as HTMLAnchorElement).style.borderColor =
-            'rgba(255, 255, 255, 0.5)';
+          (e.currentTarget as HTMLAnchorElement).style.borderColor = dlBorder;
         }}
         className="nav-download"
       >
         <svg viewBox="0 0 16 16" fill="none" style={{ width: '0.75rem', height: '0.75rem' }}>
           <path
             d="M8 2v8M8 10l-3-3M8 10l3-3M3 13h10"
-            stroke="#fcfcfc"
+            stroke={svgStroke}
             strokeWidth="1.8"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -241,9 +249,9 @@ export default function Navbar() {
               display: 'block',
               width: '22px',
               height: '2px',
-              background: '#fff',
+              background: hamburgerColor,
               borderRadius: '2px',
-              transition: 'transform 0.25s, opacity 0.25s',
+              transition: 'transform 0.25s, opacity 0.25s, background 0.35s',
               transform:
                 menuOpen && i === 0
                   ? 'rotate(45deg) translate(5px, 5px)'
@@ -264,9 +272,11 @@ export default function Navbar() {
             top: '100%',
             left: 0,
             right: 0,
-            background: 'rgba(5,13,26,0.97)',
+            background: scrolled ? 'rgba(255,255,255,0.97)' : 'rgba(5,13,26,0.97)',
             backdropFilter: 'blur(14px)',
-            borderBottom: '1px solid rgba(255,255,255,0.08)',
+            borderBottom: scrolled
+              ? '1px solid rgba(38,198,218,0.18)'
+              : '1px solid rgba(255,255,255,0.08)',
             padding: '1rem 2rem 1.5rem',
             display: 'flex',
             flexDirection: 'column',
@@ -285,13 +295,15 @@ export default function Navbar() {
                 padding: '0.65rem 0',
                 color:
                   activeSection === link.href.replace('#', '')
-                    ? '#F5A623'
-                    : 'rgba(255,255,255,0.8)',
+                    ? '#0891b2'
+                    : scrolled ? '#475569' : 'rgba(255,255,255,0.8)',
                 fontWeight: 600,
                 fontSize: '0.9rem',
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
-                borderBottom: '1px solid rgba(255,255,255,0.06)',
+                borderBottom: scrolled
+                  ? '1px solid rgba(0,0,0,0.06)'
+                  : '1px solid rgba(255,255,255,0.06)',
               }}
             >
               {link.label}

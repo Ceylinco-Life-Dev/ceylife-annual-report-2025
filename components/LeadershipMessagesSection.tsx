@@ -217,7 +217,7 @@ export default function LeadershipMessagesSection() {
         <p style={{ margin: '0 0 0.5rem', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#64748b' }}>
           Leadership Perspectives
         </p>
-        <h2 style={{ margin: 0, fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', fontWeight: 900, color: '#0d1f35', lineHeight: 1.1 }}>
+        <h2 style={{ margin: 0, fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 900, color: '#0d1f35', lineHeight: 1.1 }}>
           Messages from our{' '}
           <span style={{ background: 'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
             Leadership

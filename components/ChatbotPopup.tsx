@@ -173,11 +173,11 @@ const Bubble = ({ msg, onSpeak, isSpeaking, ttsLoading }: { msg: Msg; onSpeak: (
         <div style={{
           padding: '10px 14px',
           borderRadius: isUser ? '18px 18px 4px 18px' : '18px 18px 18px 4px',
-          background: isUser ? 'linear-gradient(135deg, #0097A7, #005B6E)' : 'rgba(255,255,255,0.07)',
-          border: isUser ? 'none' : '1px solid rgba(38,198,218,0.18)',
-          color: isUser ? '#fff' : 'rgba(255,255,255,0.88)',
+          background: isUser ? 'linear-gradient(135deg, #0097A7, #005B6E)' : 'rgba(255,255,255,0.92)',
+          border: isUser ? 'none' : '1px solid rgba(38,198,218,0.22)',
+          color: isUser ? '#fff' : '#334155',
           fontSize: '13px', lineHeight: '1.6', wordBreak: 'break-word',
-          boxShadow: isUser ? '0 3px 14px rgba(0,150,180,0.3)' : '0 2px 12px rgba(0,0,0,0.3)',
+          boxShadow: isUser ? '0 3px 14px rgba(0,150,180,0.3)' : '0 2px 12px rgba(0,0,0,0.07)',
         }}>
           {msg.typing
             ? <div style={{ display: 'flex', gap: '4px', padding: '2px 0' }}>
@@ -186,7 +186,7 @@ const Bubble = ({ msg, onSpeak, isSpeaking, ttsLoading }: { msg: Msg; onSpeak: (
             : isUser ? msg.text : (
                 <ReactMarkdown components={{
                   p: ({ children }) => <p style={{ margin: '0 0 6px 0', lineHeight: '1.6' }}>{children}</p>,
-                  strong: ({ children }) => <strong style={{ color: '#4DD6E5', fontWeight: 600 }}>{children}</strong>,
+                  strong: ({ children }) => <strong style={{ color: '#0891b2', fontWeight: 600 }}>{children}</strong>,
                   ol: ({ children }) => <ol style={{ paddingLeft: '16px', margin: '4px 0' }}>{children}</ol>,
                   ul: ({ children }) => <ul style={{ paddingLeft: '16px', margin: '4px 0' }}>{children}</ul>,
                   li: ({ children }) => <li style={{ marginBottom: '4px', lineHeight: '1.6' }}>{children}</li>,
@@ -195,10 +195,10 @@ const Bubble = ({ msg, onSpeak, isSpeaking, ttsLoading }: { msg: Msg; onSpeak: (
           }
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '3px', padding: isUser ? '0 4px 0 0' : '0 0 0 4px', justifyContent: isUser ? 'flex-end' : 'flex-start' }}>
-          <span style={{ fontSize: '10px', color: 'rgba(255,255,255,0.25)', fontFamily: 'monospace' }}>{msg.time}</span>
+          <span style={{ fontSize: '10px', color: '#94a3b8', fontFamily: 'monospace' }}>{msg.time}</span>
           {!isUser && !msg.typing && (
             <button onClick={() => onSpeak(msg)}
-              style={{ background: isSpeaking ? 'rgba(38,198,218,0.15)' : 'rgba(255,255,255,0.06)', border: `1px solid ${isSpeaking ? 'rgba(38,198,218,0.4)' : 'rgba(255,255,255,0.1)'}`, borderRadius: '16px', padding: '2px 7px', cursor: 'pointer', color: isSpeaking ? '#26C6DA' : 'rgba(255,255,255,0.4)', display: 'flex', alignItems: 'center', gap: '3px', fontSize: '10px', transition: 'all .2s' }}>
+              style={{ background: isSpeaking ? 'rgba(38,198,218,0.12)' : 'rgba(38,198,218,0.06)', border: `1px solid ${isSpeaking ? 'rgba(38,198,218,0.4)' : 'rgba(38,198,218,0.18)'}`, borderRadius: '16px', padding: '2px 7px', cursor: 'pointer', color: isSpeaking ? '#0891b2' : '#64748b', display: 'flex', alignItems: 'center', gap: '3px', fontSize: '10px', transition: 'all .2s' }}>
               {ttsLoading ? <SpinnerIcon size={10} /> : <SpeakerIcon size={11} filled={isSpeaking} />}
               <span>{isSpeaking ? 'stop' : 'speak'}</span>
             </button>
@@ -211,12 +211,11 @@ const Bubble = ({ msg, onSpeak, isSpeaking, ttsLoading }: { msg: Msg; onSpeak: (
 
 /* ─── Ceylena Side Character ─────────────────────────────────── */
 // Image is 569×390 RGBA. Character occupies roughly the left 310px of width, full height.
-// At display height 370px → auto width ≈ 539px.
-// A 270px-wide container clips right at the character's edge (270/539 × 569 ≈ 285px of original).
+// At display height 220px → auto width ≈ 321px. 170px-wide container shows 301px of original ≈ character edge.
 function CeylenaPanel({ speaking, typing }: { speaking: boolean; typing: boolean }) {
   return (
     <div className="ceylena-panel" style={{
-      width: '270px',
+      width: '170px',
       flexShrink: 0,
       display: 'flex',
       flexDirection: 'column',
@@ -225,24 +224,21 @@ function CeylenaPanel({ speaking, typing }: { speaking: boolean; typing: boolean
       position: 'relative',
     }}>
 
-      {/* Name badge — floats above character */}
-      
-
       {/* Soft crimson glow behind character matching saree */}
       <div style={{
-        position: 'absolute', bottom: '20px', left: '30px',
-        width: '220px', height: '220px', borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(160,25,45,0.32) 0%, rgba(38,198,218,0.05) 55%, transparent 75%)',
-        filter: 'blur(28px)',
+        position: 'absolute', bottom: '10px', left: '15px',
+        width: '140px', height: '140px', borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(160,25,45,0.28) 0%, rgba(38,198,218,0.04) 55%, transparent 75%)',
+        filter: 'blur(20px)',
         animation: 'ceylenaGlow 4s ease-in-out infinite',
         zIndex: 0,
         pointerEvents: 'none',
       }} />
 
-      {/* Character — 270px wide container clips right empty space of the PNG */}
+      {/* Character — 170px wide container clips right empty space of the PNG */}
       <div style={{
         position: 'relative', zIndex: 1,
-        width: '270px',
+        width: '170px',
         overflow: 'hidden',
         animation: 'ceylenaSlideUp 0.65s cubic-bezier(.34,1.56,.64,1) 0.1s both',
       }}>
@@ -250,14 +246,14 @@ function CeylenaPanel({ speaking, typing }: { speaking: boolean; typing: boolean
           src="/images/AIChatbot.png"
           alt="Ceylena"
           style={{
-            height: '370px',   // drive height; auto-width = 539px → 270px container shows left 284px of original ≈ full character
+            height: '220px',   // drive height; auto-width ≈ 321px → 170px container shows ~301px of original ≈ character edge
             width: 'auto',
             maxWidth: 'none',
             display: 'block',
             transition: 'filter 0.4s ease, transform 0.4s ease',
             filter: speaking
-              ? 'drop-shadow(0 0 22px rgba(245,166,35,0.55))'
-              : 'drop-shadow(0 6px 22px rgba(120,20,35,0.4))',
+              ? 'drop-shadow(0 0 14px rgba(245,166,35,0.55))'
+              : 'drop-shadow(0 4px 14px rgba(120,20,35,0.35))',
             animation: speaking ? 'ceylenaSpeak 0.85s ease-in-out infinite alternate' : 'none',
           }}
         />
@@ -469,15 +465,15 @@ export default function ChatbotPopup({ onClose }: { onClose: () => void }) {
         .chat-textarea { scrollbar-width: none; }
         .chat-textarea::-webkit-scrollbar { display: none; }
         .chat-textarea:focus { outline: none; }
-        .chat-textarea::placeholder { color: rgba(255,255,255,0.25); }
+        .chat-textarea::placeholder { color: rgba(100,116,139,0.55); }
 
         /* Hide Ceylena on small screens */
-        @media (max-width: 1020px) {
+        @media (max-width: 860px) {
           .ceylena-panel { display: none !important; }
         }
         /* When Ceylena is hidden, make full popup rounded */
         .chat-popup { border-radius: 1.75rem; }
-        @media (min-width: 1021px) {
+        @media (min-width: 861px) {
           .chat-popup { border-radius: 1.75rem 0 0 1.75rem; }
         }
       `}</style>
@@ -506,16 +502,16 @@ export default function ChatbotPopup({ onClose }: { onClose: () => void }) {
           height: 'clamp(520px, 86vh, 780px)',
           display: 'flex',
           flexDirection: 'column',
-          background: 'linear-gradient(160deg, #0d1b2e 0%, #07111c 55%, #091520 100%)',
-          border: '1px solid rgba(38,198,218,0.2)',
-          borderLeft: '1px solid rgba(38,198,218,0.1)',
+          background: 'linear-gradient(160deg, #f0fcfb 0%, #f4fdf4 55%, #fbfcf0 100%)',
+          border: '1px solid rgba(38,198,218,0.25)',
+          borderLeft: '1px solid rgba(38,198,218,0.15)',
           overflow: 'hidden',
           position: 'relative',
         }}>
 
           {/* Watercolor accents */}
-          <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', zIndex:0, background:'radial-gradient(ellipse 60% 40% at 80% 0%, rgba(38,198,218,0.1) 0%, transparent 60%)' }} />
-          <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', zIndex:0, background:'radial-gradient(ellipse 50% 50% at 10% 90%, rgba(102,187,106,0.07) 0%, transparent 60%)' }} />
+          <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', zIndex:0, background:'radial-gradient(ellipse 60% 40% at 80% 0%, rgba(38,198,218,0.12) 0%, transparent 60%)' }} />
+          <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', zIndex:0, background:'radial-gradient(ellipse 50% 50% at 10% 90%, rgba(102,187,106,0.1) 0%, transparent 60%)' }} />
 
           {/* ── Voice consent overlay ──────────────────────────────── */}
           {voiceConsent === null && (
@@ -565,13 +561,13 @@ export default function ChatbotPopup({ onClose }: { onClose: () => void }) {
           )}
 
           {/* Header */}
-          <div style={{ position:'relative', zIndex:1, padding:'0.85rem 1.1rem', borderBottom:'1px solid rgba(38,198,218,0.12)', display:'flex', alignItems:'center', gap:'0.75rem', flexShrink:0, background:'rgba(6,13,28,0.7)', backdropFilter:'blur(10px)', WebkitBackdropFilter:'blur(10px)' }}>
+          <div style={{ position:'relative', zIndex:1, padding:'0.85rem 1.1rem', borderBottom:'1px solid rgba(38,198,218,0.2)', display:'flex', alignItems:'center', gap:'0.75rem', flexShrink:0, background:'rgba(255,255,255,0.88)', backdropFilter:'blur(10px)', WebkitBackdropFilter:'blur(10px)' }}>
             <SiriOrbHeader listening={isListening} speaking={isSpeaking} />
             <div style={{ flex:1 }}>
-              <p style={{ margin:0, fontSize:'0.82rem', fontWeight:700, color:'rgba(255,255,255,0.92)', letterSpacing:'0.02em' }}>Ceylinco Life AI Assistant</p>
-              <p style={{ margin:'1px 0 0', fontSize:'0.62rem', color:'rgba(38,198,218,0.5)', letterSpacing:'0.08em' }}>2025 Annual Report Guide</p>
+              <p style={{ margin:0, fontSize:'0.82rem', fontWeight:700, color:'#0d1f35', letterSpacing:'0.02em' }}>Ceylinco Life AI Assistant</p>
+              <p style={{ margin:'1px 0 0', fontSize:'0.62rem', color:'#1a9aaa', letterSpacing:'0.08em' }}>2025 Annual Report Guide</p>
             </div>
-            <button onClick={onClose} style={{ background:'rgba(255,255,255,0.07)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:'50%', width:'1.85rem', height:'1.85rem', cursor:'pointer', color:'rgba(255,255,255,0.55)', fontSize:'1.05rem', display:'flex', alignItems:'center', justifyContent:'center', transition:'all .2s', flexShrink:0 }}>×</button>
+            <button onClick={onClose} style={{ background:'rgba(0,0,0,0.05)', border:'1px solid rgba(0,0,0,0.1)', borderRadius:'50%', width:'1.85rem', height:'1.85rem', cursor:'pointer', color:'#64748b', fontSize:'1.05rem', display:'flex', alignItems:'center', justifyContent:'center', transition:'all .2s', flexShrink:0 }}>×</button>
           </div>
 
           {/* Messages */}
@@ -614,10 +610,10 @@ export default function ChatbotPopup({ onClose }: { onClose: () => void }) {
           )}
 
           {/* Suggestion chips */}
-          <div style={{ position:'relative', zIndex:1, padding:'0.5rem 1.1rem', display:'flex', flexWrap:'wrap', gap:'0.35rem', flexShrink:0, borderTop:'1px solid rgba(38,198,218,0.08)' }}>
+          <div style={{ position:'relative', zIndex:1, padding:'0.5rem 1.1rem', display:'flex', flexWrap:'wrap', gap:'0.35rem', flexShrink:0, borderTop:'1px solid rgba(38,198,218,0.15)' }}>
             {CHIPS.map(chip => (
               <button key={chip} className="chat-chip" onClick={() => dispatch(chip, false)}
-                style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(38,198,218,0.18)', borderRadius:'20px', padding:'4px 12px', color:'rgba(255,255,255,0.5)', fontSize:'11px', cursor:'pointer', whiteSpace:'nowrap' }}>
+                style={{ background:'rgba(255,255,255,0.85)', border:'1px solid rgba(38,198,218,0.22)', borderRadius:'20px', padding:'4px 12px', color:'#64748b', fontSize:'11px', cursor:'pointer', whiteSpace:'nowrap', boxShadow:'0 1px 4px rgba(0,0,0,0.05)' }}>
                 {chip}
               </button>
             ))}
@@ -626,24 +622,24 @@ export default function ChatbotPopup({ onClose }: { onClose: () => void }) {
           {/* Error banners */}
           {(micError || ttsError) && (
             <div style={{ position:'relative', zIndex:1, padding:'0 1.1rem', display:'flex', flexDirection:'column', gap:'4px', flexShrink:0 }}>
-              {micError && <div style={{ padding:'7px 12px', background:'rgba(239,68,68,0.08)', border:'1px solid rgba(239,68,68,0.2)', borderRadius:'8px', color:'#fca5a5', fontSize:'11px', display:'flex', alignItems:'center', gap:'6px' }}>⚠ {micError}<button onClick={() => setMicError('')} style={{ marginLeft:'auto', background:'none', border:'none', color:'rgba(255,255,255,0.3)', cursor:'pointer', fontSize:'13px' }}>✕</button></div>}
-              {ttsError && <div style={{ padding:'7px 12px', background:'rgba(38,198,218,0.07)', border:'1px solid rgba(38,198,218,0.2)', borderRadius:'8px', color:'#26C6DA', fontSize:'11px', display:'flex', alignItems:'center', gap:'6px' }}>⚠ {ttsError}<button onClick={() => setTtsError('')} style={{ marginLeft:'auto', background:'none', border:'none', color:'rgba(255,255,255,0.3)', cursor:'pointer', fontSize:'13px' }}>✕</button></div>}
+              {micError && <div style={{ padding:'7px 12px', background:'rgba(239,68,68,0.06)', border:'1px solid rgba(239,68,68,0.2)', borderRadius:'8px', color:'#dc2626', fontSize:'11px', display:'flex', alignItems:'center', gap:'6px' }}>⚠ {micError}<button onClick={() => setMicError('')} style={{ marginLeft:'auto', background:'none', border:'none', color:'#94a3b8', cursor:'pointer', fontSize:'13px' }}>✕</button></div>}
+              {ttsError && <div style={{ padding:'7px 12px', background:'rgba(38,198,218,0.06)', border:'1px solid rgba(38,198,218,0.2)', borderRadius:'8px', color:'#0891b2', fontSize:'11px', display:'flex', alignItems:'center', gap:'6px' }}>⚠ {ttsError}<button onClick={() => setTtsError('')} style={{ marginLeft:'auto', background:'none', border:'none', color:'#94a3b8', cursor:'pointer', fontSize:'13px' }}>✕</button></div>}
             </div>
           )}
 
           {/* Input bar */}
-          <div style={{ position:'relative', zIndex:1, padding:'0.65rem 1.1rem 0.9rem', borderTop:'1px solid rgba(38,198,218,0.1)', flexShrink:0, background:'rgba(6,13,28,0.5)' }}>
-            <div style={{ display:'flex', alignItems:'center', gap:'8px', background:'rgba(255,255,255,0.05)', border:'1.5px solid rgba(38,198,218,0.22)', borderRadius:'24px', padding:'6px 8px 6px 16px', boxShadow:'0 2px 16px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)' }}>
+          <div style={{ position:'relative', zIndex:1, padding:'0.65rem 1.1rem 0.9rem', borderTop:'1px solid rgba(38,198,218,0.18)', flexShrink:0, background:'rgba(255,255,255,0.75)' }}>
+            <div style={{ display:'flex', alignItems:'center', gap:'8px', background:'rgba(255,255,255,0.95)', border:'1.5px solid rgba(38,198,218,0.28)', borderRadius:'24px', padding:'6px 8px 6px 16px', boxShadow:'0 2px 12px rgba(38,198,218,0.1), inset 0 1px 0 rgba(255,255,255,0.8)' }}>
               <textarea
                 ref={textareaRef} rows={1} value={inputText}
                 onChange={handleInput} onKeyDown={handleKey}
                 placeholder="Ask about the 2025 Annual Report…"
                 className="chat-textarea"
-                style={{ flex:1, background:'none', border:'none', color:'rgba(255,255,255,0.88)', fontSize:'13px', fontFamily:'inherit', resize:'none', lineHeight:'1.55', maxHeight:'120px', overflowY:'auto', caretColor:'#26C6DA', minWidth:0, outline:'none', padding:'5px 0', display:'block' }}
+                style={{ flex:1, background:'none', border:'none', color:'#0d1f35', fontSize:'13px', fontFamily:'inherit', resize:'none', lineHeight:'1.55', maxHeight:'120px', overflowY:'auto', caretColor:'#26C6DA', minWidth:0, outline:'none', padding:'5px 0', display:'block' }}
               />
               {/* Mic */}
               <button onClick={toggleListening} title={isListening ? 'Stop' : 'Voice input'}
-                style={{ width:'32px', height:'32px', borderRadius:'50%', border:`1.5px solid ${isListening ? 'rgba(38,198,218,0.5)' : 'rgba(255,255,255,0.12)'}`, background: isListening ? 'rgba(38,198,218,0.12)' : 'rgba(255,255,255,0.05)', color: isListening ? '#26C6DA' : 'rgba(255,255,255,0.45)', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', transition:'all .2s', flexShrink:0 }}>
+                style={{ width:'32px', height:'32px', borderRadius:'50%', border:`1.5px solid ${isListening ? 'rgba(38,198,218,0.5)' : 'rgba(38,198,218,0.25)'}`, background: isListening ? 'rgba(38,198,218,0.12)' : 'rgba(255,255,255,0.9)', color: isListening ? '#26C6DA' : '#64748b', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', transition:'all .2s', flexShrink:0 }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   {isListening
                     ? <rect x="4" y="4" width="16" height="16" rx="3" fill="currentColor" stroke="none"/>
@@ -657,8 +653,8 @@ export default function ChatbotPopup({ onClose }: { onClose: () => void }) {
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
               </button>
             </div>
-            <p style={{ margin:'0.35rem 0 0', textAlign:'center', fontSize:'10px', color:'rgba(255,255,255,0.18)' }}>
-              Powered by <span style={{ color:'rgba(38,198,218,0.55)', fontWeight:600 }}>Ceylinco Life Insurance</span>
+            <p style={{ margin:'0.35rem 0 0', textAlign:'center', fontSize:'10px', color:'#94a3b8' }}>
+              Powered by <span style={{ color:'#1a9aaa', fontWeight:600 }}>Ceylinco Life Insurance</span>
             </p>
           </div>
 

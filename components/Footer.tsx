@@ -79,25 +79,17 @@ export default function Footer() {
   }
 
   return (
-    <footer style={{ position: 'relative', overflow: 'hidden', background: '#060d1c', color: '#fff' }}>
+    <footer style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(160deg, #d8f5f0 0%, #e8f5e0 50%, #f5f0d8 100%)' }}>
 
-      {/* ── Watercolor cloud background (same language as KPI / Sustainability) ── */}
+      {/* ── Soft pastel blobs ── */}
       <div aria-hidden style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-        {/* Teal — top-right */}
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 55% 45% at 88% 10%, rgba(0,188,212,0.28) 0%, transparent 65%)' }} />
-        {/* Green — left mid */}
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 40% 50% at 5% 55%, rgba(76,175,80,0.22) 0%, transparent 60%)' }} />
-        {/* Purple — upper-left */}
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 38% 35% at 18% 8%, rgba(126,87,194,0.28) 0%, transparent 58%)' }} />
-        {/* Gold — bottom-center */}
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 50% 28% at 50% 100%, rgba(245,166,35,0.14) 0%, transparent 65%)' }} />
-        {/* Rose — bottom-left */}
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 40% 38% at 8% 92%, rgba(233,30,99,0.15) 0%, transparent 58%)' }} />
-        {/* Deep blue center overlay */}
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(6,24,60,0.55) 0%, transparent 75%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 55% 45% at 88% 10%, rgba(38,198,218,0.12) 0%, transparent 65%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 40% 50% at 5% 55%, rgba(102,187,106,0.1) 0%, transparent 60%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 38% 35% at 18% 8%, rgba(126,87,194,0.07) 0%, transparent 58%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 50% 28% at 50% 100%, rgba(245,166,35,0.08) 0%, transparent 65%)' }} />
       </div>
 
-      {/* ── Top accent line — cyan→green gradient matching section headers ── */}
+      {/* ── Top accent line ── */}
       <div style={{ position: 'relative', height: '3px', background: 'linear-gradient(90deg, transparent, #26C6DA, #66BB6A, #F5A623, #66BB6A, #26C6DA, transparent)' }} />
 
       {/* ── Main content ── */}
@@ -110,20 +102,19 @@ export default function Footer() {
 
           {/* ── Brand column ── */}
           <div>
-            {/* Logo — white version on dark bg */}
             <img
               src="/images/logo.png"
               alt="Ceylinco Life"
               style={{ height: '4rem', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem' }}
             />
 
-            <p style={{ color: 'rgba(255,255,255,0.62)', fontSize: '0.9rem', lineHeight: 1.75, marginBottom: '1.75rem', maxWidth: '320px' }}>
+            <p style={{ color: '#475569', fontSize: '0.9rem', lineHeight: 1.75, marginBottom: '1.75rem', maxWidth: '320px' }}>
               Guided by an enduring North Star, Ceylinco Life Insurance Limited
               remains Sri Lanka's undisputed leader in life insurance —
               committed to protecting lives and securing futures for generations to come.
             </p>
 
-            {/* Annual Report badge — glassmorphism pill */}
+            {/* Annual Report badge */}
             <div style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -131,20 +122,20 @@ export default function Footer() {
               padding: '0.45rem 1.1rem',
               borderRadius: '999px',
               background: 'rgba(38,198,218,0.1)',
-              border: '1px solid rgba(38,198,218,0.3)',
-              color: '#26C6DA',
+              border: '1px solid rgba(38,198,218,0.35)',
+              color: '#0891b2',
               fontSize: '0.68rem',
               fontWeight: 700,
               letterSpacing: '0.1em',
               textTransform: 'uppercase',
               marginBottom: '1.5rem',
             }}>
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#26C6DA', flexShrink: 0, boxShadow: '0 0 8px #26C6DA' }} />
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#26C6DA', flexShrink: 0, boxShadow: '0 0 8px rgba(38,198,218,0.6)' }} />
               Integrated Annual Report 2025
             </div>
 
             {/* Regulatory */}
-            <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.76rem', lineHeight: 1.6, marginBottom: '1.75rem' }}>
+            <p style={{ color: '#94a3b8', fontSize: '0.76rem', lineHeight: 1.6, marginBottom: '1.75rem' }}>
               Licensed by the Insurance Regulatory<br />Commission of Sri Lanka
             </p>
 
@@ -164,26 +155,25 @@ export default function Footer() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    background: 'rgba(255,255,255,0.06)',
-                    border: '1px solid rgba(255,255,255,0.12)',
-                    color: 'rgba(255,255,255,0.55)',
+                    background: 'rgba(255,255,255,0.75)',
+                    border: '1px solid rgba(38,198,218,0.22)',
+                    color: '#64748b',
                     transition: 'all 0.25s ease',
-                    backdropFilter: 'blur(8px)',
-                    WebkitBackdropFilter: 'blur(8px)',
+                    boxShadow: '0 1px 6px rgba(0,0,0,0.06)',
                   }}
                   onMouseEnter={(e) => {
                     const el = e.currentTarget;
-                    el.style.background = 'rgba(38,198,218,0.2)';
-                    el.style.borderColor = 'rgba(38,198,218,0.6)';
-                    el.style.color = '#26C6DA';
-                    el.style.boxShadow = '0 0 14px rgba(38,198,218,0.35)';
+                    el.style.background = 'rgba(38,198,218,0.12)';
+                    el.style.borderColor = 'rgba(38,198,218,0.5)';
+                    el.style.color = '#0891b2';
+                    el.style.boxShadow = '0 0 12px rgba(38,198,218,0.25)';
                   }}
                   onMouseLeave={(e) => {
                     const el = e.currentTarget;
-                    el.style.background = 'rgba(255,255,255,0.06)';
-                    el.style.borderColor = 'rgba(255,255,255,0.12)';
-                    el.style.color = 'rgba(255,255,255,0.55)';
-                    el.style.boxShadow = 'none';
+                    el.style.background = 'rgba(255,255,255,0.75)';
+                    el.style.borderColor = 'rgba(38,198,218,0.22)';
+                    el.style.color = '#64748b';
+                    el.style.boxShadow = '0 1px 6px rgba(0,0,0,0.06)';
                   }}
                 >
                   {s.icon}
@@ -200,9 +190,9 @@ export default function Footer() {
               fontWeight: 700,
               letterSpacing: '0.22em',
               textTransform: 'uppercase',
-              color: '#F5A623',
+              color: '#c47d0a',
               paddingBottom: '0.75rem',
-              borderBottom: '1px solid rgba(255,255,255,0.08)',
+              borderBottom: '1px solid rgba(38,198,218,0.2)',
             }}>
               Quick Links
             </h4>
@@ -216,7 +206,7 @@ export default function Footer() {
                       border: 'none',
                       padding: '0.48rem 0',
                       cursor: 'pointer',
-                      color: 'rgba(255,255,255,0.55)',
+                      color: '#475569',
                       fontSize: '0.9rem',
                       transition: 'color 0.2s, padding-left 0.2s',
                       display: 'flex',
@@ -226,15 +216,15 @@ export default function Footer() {
                       width: '100%',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = '#26C6DA';
+                      e.currentTarget.style.color = '#0891b2';
                       e.currentTarget.style.paddingLeft = '4px';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = 'rgba(255,255,255,0.55)';
+                      e.currentTarget.style.color = '#475569';
                       e.currentTarget.style.paddingLeft = '0';
                     }}
                   >
-                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" style={{ flexShrink: 0, opacity: 0.5 }}>
+                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" style={{ flexShrink: 0, opacity: 0.4 }}>
                       <path d="M1 1l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     {link.label}
@@ -252,9 +242,9 @@ export default function Footer() {
               fontWeight: 700,
               letterSpacing: '0.22em',
               textTransform: 'uppercase',
-              color: '#F5A623',
+              color: '#c47d0a',
               paddingBottom: '0.75rem',
-              borderBottom: '1px solid rgba(255,255,255,0.08)',
+              borderBottom: '1px solid rgba(38,198,218,0.2)',
             }}>
               Contact Us
             </h4>
@@ -264,32 +254,32 @@ export default function Footer() {
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#26C6DA"
+                    stroke="#0891b2"
                     strokeWidth={1.7}
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    style={{ width: '1rem', height: '1rem', flexShrink: 0, marginTop: '0.2rem', filter: 'drop-shadow(0 0 4px rgba(38,198,218,0.4))' }}
+                    style={{ width: '1rem', height: '1rem', flexShrink: 0, marginTop: '0.2rem' }}
                   >
                     <path d={icon} />
                   </svg>
                   {href ? (
                     <a
                       href={href}
-                      style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.88rem', lineHeight: 1.6, textDecoration: 'none', transition: 'color 0.2s' }}
-                      onMouseEnter={(e) => { e.currentTarget.style.color = '#26C6DA'; }}
-                      onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.55)'; }}
+                      style={{ color: '#475569', fontSize: '0.88rem', lineHeight: 1.6, textDecoration: 'none', transition: 'color 0.2s' }}
+                      onMouseEnter={(e) => { e.currentTarget.style.color = '#0891b2'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.color = '#475569'; }}
                     >
                       {text}
                     </a>
                   ) : (
-                    <span style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.88rem', lineHeight: 1.6 }}>{text}</span>
+                    <span style={{ color: '#475569', fontSize: '0.88rem', lineHeight: 1.6 }}>{text}</span>
                   )}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* ── Report highlights / stats ── */}
+          {/* ── 2025 Highlights ── */}
           <div>
             <h4 style={{
               margin: '0 0 1.4rem',
@@ -297,9 +287,9 @@ export default function Footer() {
               fontWeight: 700,
               letterSpacing: '0.22em',
               textTransform: 'uppercase',
-              color: '#F5A623',
+              color: '#c47d0a',
               paddingBottom: '0.75rem',
-              borderBottom: '1px solid rgba(255,255,255,0.08)',
+              borderBottom: '1px solid rgba(38,198,218,0.2)',
             }}>
               2025 Highlights
             </h4>
@@ -318,16 +308,15 @@ export default function Footer() {
                     gap: '1rem',
                     padding: '0.8rem 1rem',
                     borderRadius: '0.75rem',
-                    background: 'rgba(255,255,255,0.04)',
-                    border: '1px solid rgba(255,255,255,0.07)',
-                    backdropFilter: 'blur(12px)',
-                    WebkitBackdropFilter: 'blur(12px)',
+                    background: 'rgba(255,255,255,0.75)',
+                    border: '1px solid rgba(38,198,218,0.18)',
+                    boxShadow: '0 2px 10px rgba(0,0,0,0.04)',
                   }}
                 >
                   <div style={{ width: '3px', height: '2.2rem', borderRadius: '2px', background: 'linear-gradient(to bottom, #26C6DA, #66BB6A)', flexShrink: 0 }} />
                   <div>
-                    <p style={{ margin: 0, fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)', fontWeight: 900, color: '#F5A623', lineHeight: 1.2 }}>{value}</p>
-                    <p style={{ margin: 0, fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.38)', marginTop: '0.2rem' }}>{label}</p>
+                    <p style={{ margin: 0, fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)', fontWeight: 900, color: '#c47d0a', lineHeight: 1.2 }}>{value}</p>
+                    <p style={{ margin: 0, fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#94a3b8', marginTop: '0.2rem' }}>{label}</p>
                   </div>
                 </div>
               ))}
@@ -338,13 +327,13 @@ export default function Footer() {
       </div>
 
       {/* ── Divider ── */}
-      <div style={{ position: 'relative', zIndex: 1, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)' }} />
+      <div style={{ position: 'relative', zIndex: 1, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(38,198,218,0.3), transparent)' }} />
 
       {/* ── Bottom bar ── */}
       <div style={{
         position: 'relative',
         zIndex: 1,
-        background: 'rgba(0,0,0,0.3)',
+        background: 'rgba(255,255,255,0.4)',
         padding: '1.2rem 2rem',
         maxWidth: '90rem',
         margin: '0 auto',
@@ -354,7 +343,7 @@ export default function Footer() {
         justifyContent: 'space-between',
         gap: '1rem',
         fontSize: '0.78rem',
-        color: 'rgba(255,255,255,0.32)',
+        color: '#94a3b8',
       }}>
         <p style={{ margin: 0 }}>
           © 2025 Ceylinco Life Insurance Limited. All Rights Reserved.
@@ -364,9 +353,9 @@ export default function Footer() {
             <a
               key={item}
               href="#"
-              style={{ color: 'rgba(255,255,255,0.32)', textDecoration: 'none', transition: 'color 0.2s' }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = '#26C6DA'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.32)'; }}
+              style={{ color: '#94a3b8', textDecoration: 'none', transition: 'color 0.2s' }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = '#0891b2'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = '#94a3b8'; }}
             >
               {item}
             </a>
@@ -379,10 +368,6 @@ export default function Footer() {
           footer > div:nth-child(3) > div {
             grid-template-columns: 1fr !important;
             gap: 2.5rem !important;
-          }
-          footer .footer-bottom-bar {
-            flex-direction: column !important;
-            align-items: flex-start !important;
           }
         }
       `}</style>
