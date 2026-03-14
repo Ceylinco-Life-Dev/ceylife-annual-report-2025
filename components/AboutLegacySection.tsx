@@ -17,15 +17,15 @@ export default function AboutLegacySection() {
           position: 'relative',
           minHeight: '20vh',
           display: 'flex', alignItems: 'justifyContent: center',
-          background: 'linear-gradient(160deg, #d8f5f0 0%, #e8f5e0 50%, #f5f0d8 100%)',
+          background: 'linear-gradient(160deg, #FCF4E3 0%, #FFF8F0 50%, #F6EBEA 100%)',
           overflow: 'hidden',
         }}
       >
         {/* Decorative orbs */}
-        <div aria-hidden style={{ position:'absolute', top:'-15%', right:'-10%', width:'55vw', height:'55vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(38,198,218,0.1) 0%, transparent 62%)', pointerEvents:'none' }} />
-        <div aria-hidden style={{ position:'absolute', bottom:'-15%', left:'-8%', width:'42vw', height:'42vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(102,187,106,0.08) 0%, transparent 62%)', pointerEvents:'none' }} />
+        <div aria-hidden style={{ position:'absolute', top:'-15%', right:'-10%', width:'55vw', height:'55vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(249,161,75,0.1) 0%, transparent 62%)', pointerEvents:'none' }} />
+        <div aria-hidden style={{ position:'absolute', bottom:'-15%', left:'-8%', width:'42vw', height:'42vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(159,39,67,0.07) 0%, transparent 62%)', pointerEvents:'none' }} />
         {/* Fine dot grid */}
-        <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', opacity:0.5, backgroundImage:'radial-gradient(circle, rgba(38,198,218,0.18) 1px, transparent 1px)', backgroundSize:'36px 36px' }} />
+        <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', opacity:0.5, backgroundImage:'radial-gradient(circle, rgba(159,39,67,0.1) 1px, transparent 1px)', backgroundSize:'36px 36px' }} />
 
         <div style={{ position:'relative', zIndex:1, width:'100%', padding:'6rem 2rem', maxWidth:'88rem', margin:'0 auto' }}>
 
@@ -35,7 +35,7 @@ export default function AboutLegacySection() {
             <div style={slideRight(aboutAnim.isVisible, 100)}>
               <h2 style={{ margin:'0 0 1.25rem', fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, color:'#0d1f35', lineHeight:1, letterSpacing:'-0.02em', textTransform:'uppercase' }}>
                 ABOUT
-                <span style={{ background:'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}> US</span>
+                <span style={{ background:'linear-gradient(90deg,#9F2743,#F9A14B)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}> US</span>
               </h2>
               <p style={{ margin:'0 0 2rem', fontSize:'clamp(0.95rem,1.35vw,1.05rem)', color:'#334155', lineHeight:1.88, fontWeight:400 }}>
                 Ceylinco Life Insurance Limited is guided by an enduring North Star — one that has shaped its journey across decades, anchoring growth in trust, protection, and long-term value creation. These guiding principles reflect the Company&apos;s constant commitment to safeguarding lives today, while building resilience and security for generations to come. From its roots in Sri Lanka&apos;s earliest insurance institutions to its position today as the undisputed market leader in life insurance, Ceylinco Life&apos;s evolution is defined by foresight, resilience, and purposeful innovation.
@@ -76,14 +76,14 @@ export default function AboutLegacySection() {
           position: 'relative',
           minHeight: '100vh',
           display: 'flex', alignItems: 'center',
-          background: 'linear-gradient(160deg, #f5f0d8 0%, #e8f5e0 50%, #d8f5f0 85%)',
+          background: 'linear-gradient(160deg, #F6EBEA 0%, #FFF8F0 50%, #FCF4E3 85%)',
           overflow: 'hidden',
         }}
       >
         {/* Orbs */}
-        <div aria-hidden style={{ position:'absolute', top:'-10%', right:'-5%', width:'48vw', height:'48vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(38,198,218,0.12) 0%, transparent 65%)', pointerEvents:'none' }} />
+        <div aria-hidden style={{ position:'absolute', top:'-10%', right:'-5%', width:'48vw', height:'48vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(249,161,75,0.1) 0%, transparent 65%)', pointerEvents:'none' }} />
         <div aria-hidden style={{ position:'absolute', bottom:'-10%', left:'-5%', width:'42vw', height:'42vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(245,166,35,0.1) 0%, transparent 65%)', pointerEvents:'none' }} />
-        <div aria-hidden style={{ position:'absolute', top:'40%', left:'20%', width:'25vw', height:'25vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(102,187,106,0.07) 0%, transparent 70%)', pointerEvents:'none' }} />
+        <div aria-hidden style={{ position:'absolute', top:'40%', left:'20%', width:'25vw', height:'25vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(159,39,67,0.07) 0%, transparent 70%)', pointerEvents:'none' }} />
 
         <div style={{ position:'relative', zIndex:1, width:'100%', padding:'6rem 2rem', maxWidth:'88rem', margin:'0 auto' }}>
 
@@ -94,7 +94,7 @@ export default function AboutLegacySection() {
               <h2 style={{ margin:'0 0 0.2rem', fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, color:'#0d1f35', lineHeight:0.95, textTransform:'uppercase' }}>
                 A LEGACY OF
               </h2>
-              <h2 style={{ margin:'0 0 1.75rem',  fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, lineHeight:0.95, textTransform:'uppercase', background:'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+              <h2 style={{ margin:'0 0 1.75rem',  fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, lineHeight:0.95, textTransform:'uppercase', background:'linear-gradient(90deg,#9F2743,#F9A14B)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
                 LEADERSHIP
               </h2>
               <p style={{ margin:'0 0 2.25rem', fontSize:'clamp(0.88rem,1.2vw,1rem)', color:'#334155', lineHeight:1.88 }}>
@@ -130,7 +130,7 @@ export default function AboutLegacySection() {
                   style={{ width:'82%', height:'auto', objectFit:'contain' }}
                 />
                 <div style={{ textAlign:'center' }}>
-                  <div style={{ width:'40px', height:'2px', background:'linear-gradient(90deg,#26C6DA,#66BB6A)', margin:'0 auto 0.75rem', borderRadius:'2px' }} />
+                  <div style={{ width:'40px', height:'2px', background:'linear-gradient(90deg,#9F2743,#F9A14B)', margin:'0 auto 0.75rem', borderRadius:'2px' }} />
                   <p style={{ margin:0, fontSize:'0.62rem', fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', color:'#94a3b8' }}>
                     37 Years of Leadership
                   </p>
@@ -142,14 +142,14 @@ export default function AboutLegacySection() {
       </div>
 
       {/* ── Awards & Recognition ── */}
-      <div style={{ position: 'relative', zIndex: 1, padding: '3.5rem 0 3rem', background: 'linear-gradient(160deg, #d8f5f0 0%, #e8f5e0 50%, #f5f0d8 85%)', borderTop: '1px solid rgba(38,198,218,0.15)', borderBottom: '1px solid rgba(38,198,218,0.15)' }}>
+      <div style={{ position: 'relative', zIndex: 1, padding: '3.5rem 0 3rem', background: 'linear-gradient(160deg, #FCF4E3 0%, #FFF8F0 50%, #F6EBEA 85%)', borderTop: '1px solid rgba(159,39,67,0.15)', borderBottom: '1px solid rgba(159,39,67,0.15)' }}>
 
         {/* Heading */}
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <h2 style={{ margin:'0 0 0.2rem', fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, color:'#0d1f35', lineHeight:0.95, textTransform:'uppercase' }}>
             EXCELLANCE RECOGNISED
           </h2>
-          <h2 style={{ margin:'0 0 1.75rem',  fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, lineHeight:0.95, textTransform:'uppercase', background:'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+          <h2 style={{ margin:'0 0 1.75rem',  fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, lineHeight:0.95, textTransform:'uppercase', background:'linear-gradient(90deg,#9F2743,#F9A14B)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
             AWARDS
           </h2>
         </div>
@@ -185,7 +185,7 @@ export default function AboutLegacySection() {
                   onMouseEnter={(e) => {
                     const el = e.currentTarget as HTMLDivElement;
                     el.style.transform = 'translateY(-6px) scale(1.02)';
-                    el.style.boxShadow = '0 16px 40px rgba(38,198,218,0.2)';
+                    el.style.boxShadow = '0 16px 40px rgba(159,39,67,0.2)';
                   }}
                   onMouseLeave={(e) => {
                     const el = e.currentTarget as HTMLDivElement;
@@ -218,7 +218,7 @@ export default function AboutLegacySection() {
                       background: 'linear-gradient(to top, rgba(5,13,26,0.82) 0%, transparent 100%)',
                     }}>
                       <p style={{ margin: '0 0 0.2rem', fontSize: '0.72rem', fontWeight: 700, color: '#ffffff', lineHeight: 1.4 }}>{title}</p>
-                      <p style={{ margin: 0, fontSize: '0.58rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#26C6DA' }}>{org}</p>
+                      <p style={{ margin: 0, fontSize: '0.58rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#9F2743' }}>{org}</p>
                     </div>
                   </div>
                 </div>

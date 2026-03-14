@@ -45,8 +45,8 @@ function LeaderPanel({ leader, idx }: { leader: typeof leaders[0]; idx: number }
   const { ref, visible } = useInView(0.1);
 
   const gradientDir = leader.imageLeft
-    ? 'to right, transparent 0%, transparent 30%, rgba(184,240,210,0.85) 55%, rgba(184,240,210,0.98) 100%'
-    : 'to left, transparent 0%, transparent 30%, rgba(184,230,242,0.85) 55%, rgba(184,230,242,0.98) 100%';
+    ? 'to right, transparent 0%, transparent 30%, rgba(246,235,234,0.88) 55%, rgba(246,235,234,0.96) 100%'
+    : 'to left, transparent 0%, transparent 30%, rgba(252,244,227,0.88) 55%, rgba(252,244,227,0.96) 100%';
 
   return (
     <div
@@ -97,8 +97,8 @@ function LeaderPanel({ leader, idx }: { leader: typeof leaders[0]; idx: number }
           position: 'absolute',
           inset: 0,
           background: leader.imageLeft
-            ? 'linear-gradient(to left, rgba(184,240,210,0.95) 45%, transparent 65%)'
-            : 'linear-gradient(to right, rgba(184,230,242,0.95) 45%, transparent 65%)',
+            ? 'linear-gradient(to left, rgba(246,235,234,0.96) 45%, transparent 65%)'
+            : 'linear-gradient(to right, rgba(252,244,227,0.96) 45%, transparent 65%)',
           pointerEvents: 'none',
         }}
       />
@@ -201,7 +201,7 @@ export default function LeadershipMessagesSection() {
   return (
     <section
       id="leadership"
-      style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(180deg, #d8f5f2 0%, #e8f5e8 50%, #f5f0e8 100%)' }}
+      style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(180deg, #FCF4E3 0%, #FFF8F0 50%, #F6EBEA 100%)' }}
     >
       {/* Section header */}
       <div
@@ -219,7 +219,7 @@ export default function LeadershipMessagesSection() {
         </p>
         <h2 style={{ margin: 0, fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 900, color: '#0d1f35', lineHeight: 1.1 }}>
           Messages from our{' '}
-          <span style={{ background: 'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+          <span style={{ background: 'linear-gradient(90deg,#9F2743,#F9A14B)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
             Leadership
           </span>
         </h2>
@@ -269,7 +269,7 @@ export default function LeadershipMessagesSection() {
             top: 0 !important; left: 0 !important; right: 0 !important;
             height: 300px !important;
             bottom: auto !important;
-            background: linear-gradient(to bottom, transparent 45%, #d8f5f2 100%) !important;
+            background: linear-gradient(to bottom, transparent 45%, #FCF4E3 100%) !important;
           }
           .leader-panel-gradient-b { display: none !important; }
 
@@ -282,7 +282,7 @@ export default function LeadershipMessagesSection() {
             align-items: flex-start !important;
             justify-content: flex-start !important;
             padding: 1.25rem 1.1rem 2rem !important;
-            background: #d8f5f2;
+            background: #FCF4E3;
           }
 
           /* Text content fills full width, no slide animations */

@@ -79,18 +79,18 @@ export default function Footer() {
   }
 
   return (
-    <footer style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(160deg, #d8f5f0 0%, #e8f5e0 50%, #f5f0d8 100%)' }}>
+    <footer style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(160deg, #FCF4E3 0%, #FFF8F0 50%, #F6EBEA 100%)' }}>
 
       {/* ── Soft pastel blobs ── */}
       <div aria-hidden style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 55% 45% at 88% 10%, rgba(38,198,218,0.12) 0%, transparent 65%)' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 40% 50% at 5% 55%, rgba(102,187,106,0.1) 0%, transparent 60%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 55% 45% at 88% 10%, rgba(249,161,75,0.1) 0%, transparent 65%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 40% 50% at 5% 55%, rgba(159,39,67,0.07) 0%, transparent 60%)' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 38% 35% at 18% 8%, rgba(126,87,194,0.07) 0%, transparent 58%)' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 50% 28% at 50% 100%, rgba(245,166,35,0.08) 0%, transparent 65%)' }} />
       </div>
 
       {/* ── Top accent line ── */}
-      <div style={{ position: 'relative', height: '3px', background: 'linear-gradient(90deg, transparent, #26C6DA, #66BB6A, #F5A623, #66BB6A, #26C6DA, transparent)' }} />
+      <div style={{ position: 'relative', height: '3px', background: 'linear-gradient(90deg, transparent, #9F2743, #F9A14B, #F4D98E, #F9A14B, #9F2743, transparent)' }} />
 
       {/* ── Main content ── */}
       <div style={{ position: 'relative', zIndex: 1, maxWidth: '90rem', margin: '0 auto', padding: '4.5rem 2rem 3rem' }}>
@@ -121,16 +121,16 @@ export default function Footer() {
               gap: '0.55rem',
               padding: '0.45rem 1.1rem',
               borderRadius: '999px',
-              background: 'rgba(38,198,218,0.1)',
-              border: '1px solid rgba(38,198,218,0.35)',
-              color: '#0891b2',
+              background: 'rgba(159,39,67,0.08)',
+              border: '1px solid rgba(159,39,67,0.35)',
+              color: '#9F2743',
               fontSize: '0.68rem',
               fontWeight: 700,
               letterSpacing: '0.1em',
               textTransform: 'uppercase',
               marginBottom: '1.5rem',
             }}>
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#26C6DA', flexShrink: 0, boxShadow: '0 0 8px rgba(38,198,218,0.6)' }} />
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#9F2743', flexShrink: 0, boxShadow: '0 0 8px rgba(159,39,67,0.6)' }} />
               Integrated Annual Report 2025
             </div>
 
@@ -156,22 +156,22 @@ export default function Footer() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     background: 'rgba(255,255,255,0.75)',
-                    border: '1px solid rgba(38,198,218,0.22)',
+                    border: '1px solid rgba(159,39,67,0.22)',
                     color: '#64748b',
                     transition: 'all 0.25s ease',
                     boxShadow: '0 1px 6px rgba(0,0,0,0.06)',
                   }}
                   onMouseEnter={(e) => {
                     const el = e.currentTarget;
-                    el.style.background = 'rgba(38,198,218,0.12)';
-                    el.style.borderColor = 'rgba(38,198,218,0.5)';
-                    el.style.color = '#0891b2';
-                    el.style.boxShadow = '0 0 12px rgba(38,198,218,0.25)';
+                    el.style.background = 'rgba(159,39,67,0.1)';
+                    el.style.borderColor = 'rgba(159,39,67,0.5)';
+                    el.style.color = '#9F2743';
+                    el.style.boxShadow = '0 0 12px rgba(159,39,67,0.25)';
                   }}
                   onMouseLeave={(e) => {
                     const el = e.currentTarget;
                     el.style.background = 'rgba(255,255,255,0.75)';
-                    el.style.borderColor = 'rgba(38,198,218,0.22)';
+                    el.style.borderColor = 'rgba(159,39,67,0.22)';
                     el.style.color = '#64748b';
                     el.style.boxShadow = '0 1px 6px rgba(0,0,0,0.06)';
                   }}
@@ -192,7 +192,7 @@ export default function Footer() {
               textTransform: 'uppercase',
               color: '#c47d0a',
               paddingBottom: '0.75rem',
-              borderBottom: '1px solid rgba(38,198,218,0.2)',
+              borderBottom: '1px solid rgba(159,39,67,0.2)',
             }}>
               Quick Links
             </h4>
@@ -216,7 +216,7 @@ export default function Footer() {
                       width: '100%',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = '#0891b2';
+                      e.currentTarget.style.color = '#9F2743';
                       e.currentTarget.style.paddingLeft = '4px';
                     }}
                     onMouseLeave={(e) => {
@@ -244,7 +244,7 @@ export default function Footer() {
               textTransform: 'uppercase',
               color: '#c47d0a',
               paddingBottom: '0.75rem',
-              borderBottom: '1px solid rgba(38,198,218,0.2)',
+              borderBottom: '1px solid rgba(159,39,67,0.2)',
             }}>
               Contact Us
             </h4>
@@ -254,7 +254,7 @@ export default function Footer() {
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#0891b2"
+                    stroke="#9F2743"
                     strokeWidth={1.7}
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -266,7 +266,7 @@ export default function Footer() {
                     <a
                       href={href}
                       style={{ color: '#475569', fontSize: '0.88rem', lineHeight: 1.6, textDecoration: 'none', transition: 'color 0.2s' }}
-                      onMouseEnter={(e) => { e.currentTarget.style.color = '#0891b2'; }}
+                      onMouseEnter={(e) => { e.currentTarget.style.color = '#9F2743'; }}
                       onMouseLeave={(e) => { e.currentTarget.style.color = '#475569'; }}
                     >
                       {text}
@@ -289,7 +289,7 @@ export default function Footer() {
               textTransform: 'uppercase',
               color: '#c47d0a',
               paddingBottom: '0.75rem',
-              borderBottom: '1px solid rgba(38,198,218,0.2)',
+              borderBottom: '1px solid rgba(159,39,67,0.2)',
             }}>
               2025 Highlights
             </h4>
@@ -309,11 +309,11 @@ export default function Footer() {
                     padding: '0.8rem 1rem',
                     borderRadius: '0.75rem',
                     background: 'rgba(255,255,255,0.75)',
-                    border: '1px solid rgba(38,198,218,0.18)',
+                    border: '1px solid rgba(159,39,67,0.18)',
                     boxShadow: '0 2px 10px rgba(0,0,0,0.04)',
                   }}
                 >
-                  <div style={{ width: '3px', height: '2.2rem', borderRadius: '2px', background: 'linear-gradient(to bottom, #26C6DA, #66BB6A)', flexShrink: 0 }} />
+                  <div style={{ width: '3px', height: '2.2rem', borderRadius: '2px', background: 'linear-gradient(to bottom, #9F2743, #F9A14B)', flexShrink: 0 }} />
                   <div>
                     <p style={{ margin: 0, fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)', fontWeight: 900, color: '#c47d0a', lineHeight: 1.2 }}>{value}</p>
                     <p style={{ margin: 0, fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#94a3b8', marginTop: '0.2rem' }}>{label}</p>
@@ -353,7 +353,7 @@ export default function Footer() {
               key={item}
               href="#"
               style={{ color: '#94a3b8', textDecoration: 'none', transition: 'color 0.2s' }}
-              onMouseEnter={(e) => { e.currentTarget.style.color = '#0891b2'; }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = '#9F2743'; }}
               onMouseLeave={(e) => { e.currentTarget.style.color = '#94a3b8'; }}
             >
               {item}

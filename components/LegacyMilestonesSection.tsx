@@ -161,7 +161,7 @@ export default function LegacyMilestonesSection() {
     <section
       id="milestones"
       ref={ref as React.RefObject<HTMLElement>}
-      style={{ position:'relative', background:'linear-gradient(160deg, #d8f5f0 0%, #e8f5e0 50%, #f5f0d8 100%)', overflow:'hidden', padding:'5.5rem 0 5rem' }}
+      style={{ position:'relative', background:'linear-gradient(160deg, #FCF4E3 0%, #FFF8F0 50%, #F6EBEA 100%)', overflow:'hidden', padding:'5.5rem 0 5rem' }}
     >
       {/* Head office watermark — vintage building behind the timeline */}
       <div aria-hidden style={{
@@ -174,10 +174,10 @@ export default function LegacyMilestonesSection() {
         mixBlendMode: 'multiply',
       }} />
       {/* Pastel overlay to keep section readable */}
-      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'linear-gradient(160deg, rgba(216,245,240,0.82) 0%, rgba(232,245,224,0.82) 50%, rgba(245,240,216,0.82) 100%)' }} />
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'linear-gradient(160deg, rgba(252,244,227,0.82) 0%, rgba(255,248,240,0.82) 50%, rgba(246,235,234,0.82) 100%)' }} />
 
       {/* Soft background blobs */}
-      <div aria-hidden style={{ position:'absolute', top:0, right:'10%', width:'40vw', height:'40vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(38,198,218,0.07) 0%, transparent 65%)', pointerEvents:'none' }} />
+      <div aria-hidden style={{ position:'absolute', top:0, right:'10%', width:'40vw', height:'40vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(249,161,75,0.1) 0%, transparent 65%)', pointerEvents:'none' }} />
       <div aria-hidden style={{ position:'absolute', bottom:'5%', left:'5%', width:'35vw', height:'35vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(245,166,35,0.07) 0%, transparent 65%)', pointerEvents:'none' }} />
 
       <div style={{ position:'relative', zIndex:1, maxWidth:'84rem', margin:'0 auto', padding:'0 2rem' }}>
@@ -189,7 +189,7 @@ export default function LegacyMilestonesSection() {
           </p>
           <h2 style={{ ...fadeUp(isVisible, 80), margin:0, fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, textTransform:'uppercase', color:'#0d1f35', lineHeight:1.1, letterSpacing:'-0.01em' }}>
             37 Years of{' '}
-            <span style={{ background:'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Trust &amp; Promise</span>
+            <span style={{ background:'linear-gradient(90deg,#9F2743,#F9A14B)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Trust &amp; Promise</span>
           </h2>
           <p style={{ ...fadeIn(isVisible, 160), margin:'0.35rem 0 0', fontSize:'0.68rem', color:'#94a3b8', letterSpacing:'0.18em', textTransform:'uppercase' }}>
             22 Consecutive Years of Market Leadership
@@ -198,7 +198,7 @@ export default function LegacyMilestonesSection() {
         </div>
 
         {/* Stats bar */}
-        <div style={{ display:'flex', flexWrap:'wrap', justifyContent:'center', marginBottom:'3.5rem', padding:'1.1rem 1.5rem', background:'#ffffff', boxShadow:'0 2px 18px rgba(0,0,0,0.055)', border:'1px solid rgba(38,198,218,0.14)', borderRadius:'0.875rem', ...fadeUp(isVisible, 150) }}>
+        <div style={{ display:'flex', flexWrap:'wrap', justifyContent:'center', marginBottom:'3.5rem', padding:'1.1rem 1.5rem', background:'#ffffff', boxShadow:'0 2px 18px rgba(0,0,0,0.055)', border:'1px solid rgba(159,39,67,0.15)', borderRadius:'0.875rem', ...fadeUp(isVisible, 150) }}>
           {achievements.map((item, i) => (
             <StatItem key={item.label} item={item} isVisible={isVisible} delay={200 + i * 100} showDivider={i < achievements.length - 1} />
           ))}
@@ -208,14 +208,14 @@ export default function LegacyMilestonesSection() {
         <div ref={tlRef} style={{ position:'relative', maxWidth:'72rem', margin:'0 auto' }}>
 
           {/* Ghost spine (full height, faint) */}
-          <div style={{ position:'absolute', left:'50%', top:'24px', bottom:'24px', width:'2px', transform:'translateX(-50%)', background:'linear-gradient(to bottom, #26C6DA22, #66BB6A22, #F5A62322, #26C6DA22)', borderRadius:'2px', pointerEvents:'none' }} />
+          <div style={{ position:'absolute', left:'50%', top:'24px', bottom:'24px', width:'2px', transform:'translateX(-50%)', background:'linear-gradient(to bottom, #9F274322, #F9A14B22, #F4D98E22, #9F274322)', borderRadius:'2px', pointerEvents:'none' }} />
 
           {/* Live spine (draws in) */}
           <div style={{
             position:'absolute', left:'50%', top:'24px', width:'2px',
             height: `calc((100% - 48px) * ${lineProgress})`,
             transform:'translateX(-50%)',
-            background:'linear-gradient(to bottom, #26C6DA, #66BB6A, #F5A623, #26C6DA)',
+            background:'linear-gradient(to bottom, #9F2743, #F9A14B, #F4D98E, #9F2743)',
             borderRadius:'2px', pointerEvents:'none',
             transition:'height 0.06s linear',
           }} />

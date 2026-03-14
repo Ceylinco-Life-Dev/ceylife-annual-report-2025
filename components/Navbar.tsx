@@ -52,12 +52,12 @@ export default function Navbar() {
 
   // Color tokens — hero = transparent dark, scrolled = white light
   const linkColor = scrolled ? '#475569' : 'rgba(255,255,255,0.82)';
-  const linkActiveColor = scrolled ? '#0891b2' : '#F5A623';
+  const linkActiveColor = scrolled ? '#9F2743' : '#F5A623';
   const linkHoverColor = scrolled ? '#0d1f35' : '#fff';
   const subtitleColor = scrolled ? '#94a3b8' : 'rgba(255,255,255,0.5)';
   const svgStroke = scrolled ? '#475569' : '#fcfcfc';
-  const dlBorder = scrolled ? 'rgba(8,145,178,0.4)' : 'rgba(255,255,255,0.5)';
-  const dlColor = scrolled ? '#0891b2' : '#e8edee';
+  const dlBorder = scrolled ? 'rgba(159,39,67,0.4)' : 'rgba(255,255,255,0.5)';
+  const dlColor = scrolled ? '#9F2743' : '#e8edee';
   const hamburgerColor = scrolled ? '#334155' : '#fff';
 
   return (
@@ -74,7 +74,7 @@ export default function Navbar() {
           : 'linear-gradient(180deg, rgba(0,0,0,0.6) 0%, transparent 100%)',
         backdropFilter: scrolled ? 'blur(18px) saturate(150%)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(18px) saturate(150%)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(38,198,218,0.18)' : 'none',
+        borderBottom: scrolled ? '1px solid rgba(159,39,67,0.15)' : 'none',
         boxShadow: scrolled ? '0 2px 20px rgba(0,0,0,0.07)' : 'none',
         transition: 'padding 0.35s ease, background 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease',
         display: 'flex',
@@ -172,7 +172,7 @@ export default function Navbar() {
                     left: 0,
                     right: 0,
                     height: '1.5px',
-                    background: 'linear-gradient(90deg, #00BCD4, #26C6DA)',
+                    background: 'linear-gradient(90deg, #9F2743, #F9A14B)',
                     transform: isActive ? 'scaleX(1)' : 'scaleX(0)',
                     transition: 'transform 0.3s ease',
                     transformOrigin: 'left',
@@ -206,8 +206,8 @@ export default function Navbar() {
           flexShrink: 0,
         }}
         onMouseEnter={(e) => {
-          (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(0,188,212,0.1)';
-          (e.currentTarget as HTMLAnchorElement).style.borderColor = '#26C6DA';
+          (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(159,39,67,0.08)';
+          (e.currentTarget as HTMLAnchorElement).style.borderColor = '#9F2743';
         }}
         onMouseLeave={(e) => {
           (e.currentTarget as HTMLAnchorElement).style.background = 'transparent';
@@ -275,7 +275,7 @@ export default function Navbar() {
             background: scrolled ? 'rgba(255,255,255,0.97)' : 'rgba(5,13,26,0.97)',
             backdropFilter: 'blur(14px)',
             borderBottom: scrolled
-              ? '1px solid rgba(38,198,218,0.18)'
+              ? '1px solid rgba(159,39,67,0.15)'
               : '1px solid rgba(255,255,255,0.08)',
             padding: '1rem 2rem 1.5rem',
             display: 'flex',
@@ -295,7 +295,7 @@ export default function Navbar() {
                 padding: '0.65rem 0',
                 color:
                   activeSection === link.href.replace('#', '')
-                    ? '#0891b2'
+                    ? '#9F2743'
                     : scrolled ? '#475569' : 'rgba(255,255,255,0.8)',
                 fontWeight: 600,
                 fontSize: '0.9rem',

@@ -50,7 +50,7 @@ export default function GuidingCompassSection() {
       ref={ref as React.RefObject<HTMLElement>}
       style={{
         position: 'relative',
-        background: 'linear-gradient(160deg, #d8f5f0 0%, #e8f5e0 50%, #f5f0d8 100%)',
+        background: 'linear-gradient(160deg, #FCF4E3 0%, #FFF8F0 50%, #F6EBEA 100%)',
         overflow: 'hidden',
         padding: '7rem 0 8rem',
       }}
@@ -67,23 +67,23 @@ export default function GuidingCompassSection() {
       {/* Pastel overlay */}
       <div aria-hidden style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: 'linear-gradient(160deg, rgba(216,245,240,0.82) 0%, rgba(232,245,224,0.82) 50%, rgba(245,240,216,0.82) 100%)',
+        background: 'linear-gradient(160deg, rgba(252,244,227,0.82) 0%, rgba(255,248,240,0.82) 50%, rgba(246,235,234,0.82) 100%)',
       }} />
       {/* Subtle tinted blobs */}
-      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 65% 50% at 50% 0%, rgba(38,198,218,0.08) 0%, transparent 65%)' }} />
-      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 50% 65% at 0% 85%, rgba(102,187,106,0.07) 0%, transparent 60%)' }} />
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 65% 50% at 50% 0%, rgba(249,161,75,0.1) 0%, transparent 65%)' }} />
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 50% 65% at 0% 85%, rgba(159,39,67,0.07) 0%, transparent 60%)' }} />
       <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', background:'radial-gradient(ellipse 45% 55% at 100% 85%, rgba(245,166,35,0.06) 0%, transparent 60%)' }} />
 
       <div style={{ position:'relative', zIndex:1, maxWidth:'88rem', margin:'0 auto', padding:'0 2rem' }}>
 
         {/* Header */}
         <div style={{ textAlign:'center', marginBottom:'3rem', ...fadeUp(isVisible, 0) }}>
-          <p style={{ margin:'0 0 0.6rem', fontSize:'0.65rem', fontWeight:700, letterSpacing:'0.3em', textTransform:'uppercase', color:'#26C6DA' }}>
+          <p style={{ margin:'0 0 0.6rem', fontSize:'0.65rem', fontWeight:700, letterSpacing:'0.3em', textTransform:'uppercase', color:'#9F2743' }}>
             Core Values
           </p>
           <h2 style={{ margin:'0 0 0.75rem', fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, color:'#0d1f35', lineHeight:1.1 }}>
             OUR GUIDING{' '}
-            <span style={{ background:'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+            <span style={{ background:'linear-gradient(90deg,#9F2743,#F9A14B)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
               COMPASS
             </span>
           </h2>

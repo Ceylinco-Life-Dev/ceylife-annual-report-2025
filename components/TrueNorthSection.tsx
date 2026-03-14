@@ -39,7 +39,7 @@ export default function TrueNorthSection() {
       ref={ref as React.RefObject<HTMLElement>}
       style={{
         position: 'relative',
-        background: 'linear-gradient(160deg, #f0f8ff 0%, #e8f5e8 55%, #d8f5f2 100%)',
+        background: 'linear-gradient(160deg, #FCF4E3 0%, #FFF8F0 50%, #F6EBEA 100%)',
         overflow: 'hidden',
         padding: '7rem 0 8rem',
       }}
@@ -55,23 +55,23 @@ export default function TrueNorthSection() {
       }} />
       
       {/* Decorative soft orbs */}
-      <div aria-hidden style={{ position:'absolute', top:'-12%', left:'-8%', width:'55vw', height:'55vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(38,198,218,0.1) 0%, transparent 65%)', pointerEvents:'none' }} />
-      <div aria-hidden style={{ position:'absolute', bottom:'-10%', right:'-6%', width:'42vw', height:'42vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(102,187,106,0.1) 0%, transparent 65%)', pointerEvents:'none' }} />
+      <div aria-hidden style={{ position:'absolute', top:'-12%', left:'-8%', width:'55vw', height:'55vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(249,161,75,0.1) 0%, transparent 65%)', pointerEvents:'none' }} />
+      <div aria-hidden style={{ position:'absolute', bottom:'-10%', right:'-6%', width:'42vw', height:'42vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(159,39,67,0.07) 0%, transparent 65%)', pointerEvents:'none' }} />
       <div aria-hidden style={{ position:'absolute', top:'25%', right:'8%', width:'28vw', height:'28vw', borderRadius:'50%', background:'radial-gradient(circle, rgba(245,166,35,0.07) 0%, transparent 70%)', pointerEvents:'none' }} />
 
       {/* Fine dot grid */}
-      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', opacity:0.45, backgroundImage:'radial-gradient(circle, rgba(38,198,218,0.18) 1px, transparent 1px)', backgroundSize:'34px 34px' }} />
+      <div aria-hidden style={{ position:'absolute', inset:0, pointerEvents:'none', opacity:0.45, backgroundImage:'radial-gradient(circle, rgba(159,39,67,0.1) 1px, transparent 1px)', backgroundSize:'34px 34px' }} />
 
       <div style={{ position:'relative', zIndex:1, maxWidth:'88rem', margin:'0 auto', padding:'0 2rem' }}>
 
         {/* Header */}
         <div style={{ textAlign:'center', marginBottom:'4rem', ...fadeUp(isVisible, 0) }}>
-          <p style={{ margin:'0 0 0.6rem', fontSize:'0.65rem', fontWeight:700, letterSpacing:'0.32em', textTransform:'uppercase', color:'#26C6DA' }}>
+          <p style={{ margin:'0 0 0.6rem', fontSize:'0.65rem', fontWeight:700, letterSpacing:'0.32em', textTransform:'uppercase', color:'#9F2743' }}>
             Principles &amp; Purpose
           </p>
           <h2 style={{ margin:'0 0 0.9rem', fontSize:'clamp(2rem,4vw,3rem)', fontWeight:900, color:'#0d1f35', lineHeight:1.1, letterSpacing:'-0.01em' }}>
             OUR TRUE{' '}
-            <span style={{ background:'linear-gradient(90deg,#26C6DA,#66BB6A)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>NORTH</span>
+            <span style={{ background:'linear-gradient(90deg,#9F2743,#F9A14B)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>NORTH</span>
           </h2>
           <p style={{ margin:'0 auto', maxWidth:'36rem', fontSize:'clamp(0.88rem,1.2vw,1rem)', color:'#64748b', lineHeight:1.75 }}>
             The enduring principles that shape our vision, guide our mission, and anchor our values across every touchpoint.
